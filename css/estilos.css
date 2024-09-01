@@ -8,7 +8,8 @@ header{
     padding-top: 0.5%;
     background-color: #00419B;
     width: 100%;
-    height: 120px;
+    height: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
@@ -22,13 +23,25 @@ header{
     height: 119px;
 }
 
-nav{
+nav ul{
+    margin-top: 10%;
     
 }
 
+nav ul li {
+    display: inline-block;
+}
+
 nav ul li a{
+    padding-right: 2rem;
     text-decoration: none;
     font-size: 1.3rem;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 section{
