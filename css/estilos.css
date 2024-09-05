@@ -10,22 +10,30 @@ header{
     width: 100%;
     height: 80%;
     margin: 0 auto;
+    padding: 1.5%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .logo a img{
-    width: 100%;
-    height: 119px;
+    width: auto;
+    height: 100px;
+    display: block;
 }
 
-nav ul{
-    margin-top: 10%;
-    
+nav ul {
+    margin: 0; /* Elimina el margen superior */
+    padding: 0; /* Elimina el relleno por defecto */
+    list-style: none; /* Elimina los puntos de lista */
+    display: flex; /* Organiza los elementos en línea */
+    gap: 2rem; /* Espacio entre los elementos del menú */
+    align-items: center;
 }
 
 nav ul li {
@@ -86,4 +94,10 @@ p{
     color: black;
     font-size: 130%;
 
+}
+
+footer{
+    background-color: #00419B;
+    width: 100%;
+    height: 200px;
 }
