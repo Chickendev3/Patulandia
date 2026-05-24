@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Patulandia — Armá tu evento ideal. Seleccioná juegos, estimá el presupuesto y reservá en minutos. Inflables y juegos para fiestas en Zona Oeste." />
+  <title>Armá tu evento — Patulandia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+
+  <link rel="stylesheet" href="./css/estilos.css" />
+  <link rel="stylesheet" href="./css/estilos-nuevos.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — idéntico al index
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Patulandia — volver al inicio">
+        <img
+          src="./img/LogoPatulandia_PNG.png"
+          alt="Patulandia"
+          class="logo__img"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Inicio</a></li>
+          <li><a class="nav__link nav__link--active-page" href="armar-evento.html">Armar mi evento</a></li>
+          <li class="nav__item--dropdown">
+            <a class="nav__link nav__link--has-dropdown" href="javascript:void(0)" aria-haspopup="true">Combos</a>
+          <div class="nav__dropdown" role="menu">
+            <div class="nav__dropdown-group">
+            <span class="nav__dropdown-label">🎈 Combos Inflables</span>
+            <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2</span></a>
+            <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
+            <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
+            <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
+          </div>
+        <div class="nav__dropdown-divider"></div>
+        <div class="nav__dropdown-group">
+          <span class="nav__dropdown-label">✨ Combos Especiales</span>
+          <a class="nav__dropdown-link" href="combo-kids.html" role="menuitem"><span class="dd-icon">🧸</span><span class="dd-text">Combo Kids</span><span class="dd-badge">Popular</span></a>
+          <a class="nav__dropdown-link" href="combo-jovenes.html" role="menuitem"><span class="dd-icon">🕹️</span><span class="dd-text">Combo Jóvenes</span></a>
+          <a class="nav__dropdown-link" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
+          <a class="nav__dropdown-link" href="combo-adultos.html" role="menuitem"><span class="dd-icon">🎱</span><span class="dd-text">Combo Adultos</span></a>
+          </div>
+        </div>
+    </li>
+    <li><a class="nav__link" href="galeria.html">Galería</a></li>
+    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navMobile"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV MOBILE — fuera del header -->
+  <div class="nav-mobile-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <nav class="nav-mobile" id="navMobile" aria-hidden="true" aria-label="Menú mobile">
+    <div class="nav-mobile__top">
+      <a href="index.html"><img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="nav-mobile__logo" /></a>
+      <button class="nav-mobile__close" id="navClose" aria-label="Cerrar menú" type="button">✕</button>
+    </div>
+    <ul class="nav-mobile__list">
+      <li><a class="nav-mobile__link" href="index.html">Inicio</a></li>
+      <li><a class="nav-mobile__link nav-mobile__link--active" href="armar-evento.html">Armar mi evento</a></li>
+      
+      <li class="nav-mobile__item--parent">
+        <a class="nav-mobile__link nav-mobile__link--parent" href="#" aria-expanded="false">
+          Combos <span class="nav-mobile__arrow" aria-hidden="true">▾</span>
+        </a>
+        <div class="nav-mobile__submenu" aria-hidden="true">
+          <span class="nav-mobile__submenu-label">🎈 Inflables</span>
+          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2</a>
+          <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3</a>
+          <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4</a>
+          <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4</a>
+          <div class="nav-mobile__submenu-divider"></div>
+          <span class="nav-mobile__submenu-label">✨ Especiales</span>
+          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids</a>
+          <a class="nav-mobile__submenu-link" href="combo-jovenes.html"><span class="sm-icon">🕹️</span> Combo Jóvenes</a>
+          <a class="nav-mobile__submenu-link" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
+          <a class="nav-mobile__submenu-link" href="combo-adultos.html"><span class="sm-icon">🎱</span> Combo Adultos</a>
+        </div>
+      </li>
+      <li><a class="nav-mobile__link" href="galeria.html">Galería</a></li>
+      <li><a class="nav-mobile__link" href="contacto.html">Contacto</a></li>
+      
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO DEL SIMULADOR
+  ============================================================ -->
+  <section class="builder-hero" aria-label="Armá tu evento" style="overflow:hidden;">
+
+    <!-- Globos decorativos del mismo sistema que el index -->
+    <div class="hero__balloons" aria-hidden="true" style="z-index:0;pointer-events:none;">
+      <div class="balloon balloon--yellow"></div>
+      <div class="balloon balloon--red b2"></div>
+      <div class="balloon balloon--green"></div>
+      <div class="balloon balloon--blue"></div>
+      <div class="balloon balloon--yellow b3"></div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="builder-hero__inner" style="align-items:center;text-align:center;">
+
+        <div class="builder-hero__text" style="max-width:700px;margin:0 auto;">
+          <span class="hero__badge">🎉 Simulador interactivo — sin compromiso</span>
+          <h1 class="builder-hero__title" style="font-size:clamp(2.6rem,7vw,4.2rem);margin-top:0.5rem;">
+            Armá tu evento<br />
+            <em>en minutos</em>
+          </h1>
+          <p class="builder-hero__subtitle" style="font-size:clamp(1.05rem,2.5vw,1.25rem);max-width:560px;margin:0 auto;">
+            Seleccioná tus opciones y descubrí la mejor combinación para tu fiesta.
+            El precio estimado se actualiza al instante, sin vueltas.
+          </p>
+        </div>
+
+        <!-- Barra de progreso (3 pasos) -->
+        <div class="progress-bar" role="list" aria-label="Pasos del simulador" style="margin:0 auto;">
+          <div class="progress-bar__step progress-bar__step--active" id="step-dot-1" role="listitem">
+            <div class="progress-bar__dot">1</div>
+            <span class="progress-bar__label">Tu evento</span>
+          </div>
+          <div class="progress-bar__line" aria-hidden="true"></div>
+          <div class="progress-bar__step" id="step-dot-2" role="listitem">
+            <div class="progress-bar__dot">2</div>
+            <span class="progress-bar__label">Juegos</span>
+          </div>
+          <div class="progress-bar__line" aria-hidden="true"></div>
+          <div class="progress-bar__step" id="step-dot-3" role="listitem">
+            <div class="progress-bar__dot">3</div>
+            <span class="progress-bar__label">Resumen</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ola de transición -->
+    <div class="hero__wave" aria-hidden="true" style="height:60px;">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SIMULADOR PRINCIPAL
+  ============================================================ -->
+  <main class="builder-main" id="simulador">
+    <div class="container">
+      <div class="builder-layout">
+
+        <!-- ====================================================
+             COLUMNA IZQUIERDA: FORMULARIO
+        ==================================================== -->
+        <div class="builder-form">
+
+          <!-- BLOQUE 1: DATOS DEL EVENTO -->
+          <section class="form-block reveal" id="bloque-datos" aria-labelledby="bloque1-title">
+            <div class="form-block__header">
+              <div class="form-block__number" aria-hidden="true">1</div>
+              <div>
+                <h2 class="form-block__title" id="bloque1-title">Contanos sobre tu evento</h2>
+                <p class="form-block__subtitle">Estos datos nos ayudan a darte las mejores recomendaciones</p>
+              </div>
+            </div>
+
+            <div class="form-block__body">
+
+              <!-- Cantidad de invitados -->
+              <div class="field">
+                <label class="field__label" for="qty-input">¿Cuántos invitados esperás?</label>
+                <div class="field__input-group">
+                  <button class="qty-btn" id="qty-minus" type="button" aria-label="Menos invitados">−</button>
+                  <input
+                    class="field__input field__input--qty"
+                    type="number"
+                    id="qty-input"
+                    name="invitados"
+                    value="20"
+                    min="5"
+                    max="300"
+                    aria-label="Cantidad de invitados"
+                  />
+                  <button class="qty-btn" id="qty-plus" type="button" aria-label="Más invitados">+</button>
+                  <span class="field__hint" style="margin-left:0.5rem;" id="qty-label">personas</span>
+                </div>
+                <p class="field__hint">Entre 5 y 300 invitados</p>
+              </div>
+
+              <!-- Edad promedio -->
+              <div class="field">
+                <label class="field__label">¿Cuál es la edad promedio de los invitados?</label>
+                <div class="toggle-group" role="group" aria-label="Rango de edad">
+                  <button class="toggle-btn toggle-btn--active" type="button" data-edad="3-6">🍭 3–6 años</button>
+                  <button class="toggle-btn" type="button" data-edad="7-10">⚽ 7–10 años</button>
+                  <button class="toggle-btn" type="button" data-edad="11-15">🎮 11–15 años</button>
+                  <button class="toggle-btn" type="button" data-edad="adultos">🥂 Adultos</button>
+                </div>
+              </div>
+
+              <!-- Tipo de espacio -->
+              <div class="field">
+                <label class="field__label">¿Dónde se hace la fiesta?</label>
+                <div class="toggle-group" role="group" aria-label="Tipo de espacio">
+                  <button class="toggle-btn toggle-btn--active" type="button" data-espacio="exterior">🌳 Exterior</button>
+                  <button class="toggle-btn" type="button" data-espacio="interior">🏠 Interior</button>
+                </div>
+              </div>
+
+              <!-- Fecha del evento (opcional) -->
+              <div class="field">
+                <label class="field__label" for="fecha-evento">Fecha del evento <span style="font-weight:400;color:var(--color-text-muted);font-size:0.85rem;">(opcional)</span></label>
+                <input class="field__input" type="date" id="fecha-evento" name="fecha" />
+                <p class="field__hint">Para verificar disponibilidad al contactarnos</p>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- BLOQUE 2: SELECCIÓN DE JUEGOS -->
+          <section class="form-block reveal reveal--delay-1" id="bloque-juegos" aria-labelledby="bloque2-title">
+            <div class="form-block__header">
+              <div class="form-block__number" aria-hidden="true">2</div>
+              <div>
+                <h2 class="form-block__title" id="bloque2-title">Elegí tus juegos</h2>
+                <p class="form-block__subtitle">Podés combinar lo que quieras — el precio se actualiza solo</p>
+              </div>
+            </div>
+
+            <!-- Chip de recomendaciones automáticas -->
+            <div class="recommendation-chip" id="recommendation-chip" aria-live="polite">
+              <span class="recommendation-chip__icon">💡</span>
+              <p class="recommendation-chip__text">
+                <strong>Te sugerimos:</strong>
+                <span id="recommendation-text">completá los datos del evento para recibir sugerencias personalizadas.</span>
+              </p>
+            </div>
+
+            <!-- Grid de juegos -->
+            <div class="games-grid" id="games-grid" role="list">
+
+              <!-- INFLABLE CHICO -->
+              <article
+                class="game-card"
+                id="game-inflable-chico"
+                data-id="inflable-chico"
+                data-price="8000"
+                data-emoji="🏰"
+                data-name="Inflable Chico"
+                data-tags="3-6,7-10,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Inflable Chico — $8.000"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">🏰</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Inflable Chico</h3>
+                  <p class="game-card__desc">Ideal para los más pequeños. Castillo clásico con tobogán incluido.</p>
+                  <p class="game-card__price">$8.000</p>
+                </div>
+                <div class="game-card__badge game-card__badge--popular">⭐ Popular</div>
+              </article>
+
+              <!-- INFLABLE GRANDE -->
+              <article
+                class="game-card"
+                id="game-inflable-grande"
+                data-id="inflable-grande"
+                data-price="12000"
+                data-emoji="🏯"
+                data-name="Inflable Grande"
+                data-tags="3-6,7-10,11-15,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Inflable Grande — $12.000"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">🏯</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Inflable Grande</h3>
+                  <p class="game-card__desc">Doble tobogán, zona de salto y obstáculos. Diversión garantizada.</p>
+                  <p class="game-card__price">$12.000</p>
+                </div>
+              </article>
+
+              <!-- METEGOL -->
+              <article
+                class="game-card"
+                id="game-metegol"
+                data-id="metegol"
+                data-price="6000"
+                data-emoji="⚽"
+                data-name="Metegol"
+                data-tags="7-10,11-15,adultos,interior,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Metegol — $6.000"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">⚽</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Metegol</h3>
+                  <p class="game-card__desc">Mesa profesional de metegol. Funciona tanto en exterior como interior.</p>
+                  <p class="game-card__price">$6.000</p>
+                </div>
+                <div class="game-card__badge game-card__badge--popular">⭐ Popular</div>
+              </article>
+
+              <!-- POOL / TEJO INFLABLE -->
+              <article
+                class="game-card"
+                id="game-pool"
+                data-id="pool"
+                data-price="7000"
+                data-emoji="🎱"
+                data-name="Pool Inflable"
+                data-tags="7-10,11-15,adultos,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Pool Inflable — $7.000"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">🎱</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Pool Inflable</h3>
+                  <p class="game-card__desc">Billar gigante inflable. Único, divertido y apto para todas las edades.</p>
+                  <p class="game-card__price">$7.000</p>
+                </div>
+                <div class="game-card__badge game-card__badge--new">✨ Nuevo</div>
+              </article>
+
+              <!-- CAMA ELÁSTICA -->
+              <article
+                class="game-card"
+                id="game-cama"
+                data-id="cama"
+                data-price="9500"
+                data-emoji="🤸"
+                data-name="Cama Elástica"
+                data-tags="3-6,7-10,11-15,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Cama Elástica — $9.500"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">🤸</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Cama Elástica</h3>
+                  <p class="game-card__desc">Con red de seguridad lateral. Saltos sin límite para chicos activos.</p>
+                  <p class="game-card__price">$9.500</p>
+                </div>
+              </article>
+
+              <!-- TEJO -->
+              <article
+                class="game-card"
+                id="game-tejo"
+                data-id="tejo"
+                data-price="4500"
+                data-emoji="🎯"
+                data-name="Tejo"
+                data-tags="adultos,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Tejo — $4.500"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">🎯</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Tejo</h3>
+                  <p class="game-card__desc">Clásico juego argentino para eventos de adultos al aire libre.</p>
+                  <p class="game-card__price">$4.500</p>
+                </div>
+              </article>
+
+              <!-- LIVING INFLABLE -->
+              <article
+                class="game-card"
+                id="game-living"
+                data-id="living"
+                data-price="11000"
+                data-emoji="🛋️"
+                data-name="Living Inflable"
+                data-tags="adultos,11-15,interior,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Living Inflable — $11.000"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">🛋️</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Living Inflable</h3>
+                  <p class="game-card__desc">Sillones y puffs inflables para crear un espacio chill en tu fiesta.</p>
+                  <p class="game-card__price">$11.000</p>
+                </div>
+                <div class="game-card__badge game-card__badge--new">✨ Nuevo</div>
+              </article>
+
+              <!-- TOBOGAN ACUÁTICO -->
+              <article
+                class="game-card"
+                id="game-tobogan"
+                data-id="tobogan"
+                data-price="14000"
+                data-emoji="💦"
+                data-name="Tobogán Acuático"
+                data-tags="3-6,7-10,11-15,exterior"
+                role="listitem"
+                tabindex="0"
+                aria-pressed="false"
+                aria-label="Tobogán Acuático — $14.000"
+              >
+                <div class="game-card__check" aria-hidden="true">✓</div>
+                <div class="game-card__placeholder" aria-hidden="true">💦</div>
+                <div class="game-card__body">
+                  <h3 class="game-card__name">Tobogán Acuático</h3>
+                  <p class="game-card__desc">Para los días de calor. El favorito de las fiestas de verano.</p>
+                  <p class="game-card__price">$14.000</p>
+                </div>
+                <div class="game-card__badge game-card__badge--popular">🔥 Más pedido</div>
+              </article>
+
+            </div><!-- /games-grid -->
+
+            <!-- Contador de seleccionados -->
+            <div class="selection-counter" id="selection-counter" aria-live="polite">
+              <strong id="selection-count">0</strong> juego(s) seleccionado(s)
+            </div>
+
+          </section>
+
+          <!-- BLOQUE 3: NOTAS ADICIONALES -->
+          <section class="form-block reveal reveal--delay-2" id="bloque-notas" aria-labelledby="bloque3-title">
+            <div class="form-block__header">
+              <div class="form-block__number" aria-hidden="true">3</div>
+              <div>
+                <h2 class="form-block__title" id="bloque3-title">¿Algo más que quieras contarnos?</h2>
+                <p class="form-block__subtitle">Cualquier detalle extra nos ayuda a preparar mejor tu evento</p>
+              </div>
+            </div>
+            <div class="form-block__body">
+              <div class="field">
+                <label class="field__label" for="notas">Notas adicionales <span style="font-weight:400;color:var(--color-text-muted);font-size:0.85rem;">(opcional)</span></label>
+                <textarea
+                  class="field__textarea"
+                  id="notas"
+                  name="notas"
+                  placeholder="Ej: la fiesta es en un jardín, el acceso es por pasillo angosto, hay un bebé de 1 año..."
+                  maxlength="400"
+                  rows="3"
+                ></textarea>
+                <p class="field__hint" id="notas-counter" aria-live="polite">0 / 400 caracteres</p>
+              </div>
+
+              <!-- Nombre para el contacto -->
+              <div class="field">
+                <label class="field__label" for="nombre-contacto">Tu nombre <span style="font-weight:400;color:var(--color-text-muted);font-size:0.85rem;">(para la consulta)</span></label>
+                <input
+                  class="field__input"
+                  type="text"
+                  id="nombre-contacto"
+                  name="nombre"
+                  placeholder="Ej: María"
+                  autocomplete="given-name"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- BOTÓN SUBMIT — visible solo en mobile -->
+          <div class="builder-submit--mobile" id="submit-mobile">
+            <button
+              class="btn btn--primary btn--full"
+              id="btn-submit-mobile"
+              type="button"
+              disabled
+            >
+              Ver opciones por WhatsApp 🎈
+            </button>
+            <p class="builder-submit__hint" id="hint-mobile">Seleccioná al menos un juego para continuar</p>
+          </div>
+
+          <!-- BOTÓN REINICIAR SIMULADOR -->
+          <div class="simulator-reset-wrap">
+            <button class="btn-reset-simulator" id="btn-reset" type="button" aria-label="Reiniciar simulador">
+              <span aria-hidden="true">↺</span> Reiniciar simulador
+            </button>
+          </div>
+
+        </div><!-- /builder-form -->
+
+
+        <!-- ====================================================
+             COLUMNA DERECHA: PANEL DE RESUMEN (sticky en desktop)
+        ==================================================== -->
+        <aside class="summary-panel" id="summary-panel" aria-label="Resumen de tu evento">
+          <div class="summary-panel__inner">
+
+            <h2 class="summary-panel__title">🎪 Tu evento</h2>
+
+            <!-- Detalles del evento -->
+            <div class="summary-section">
+              <p class="summary-section__heading">Detalles</p>
+              <div class="summary-details">
+                <div class="summary-detail">
+                  <span class="summary-detail__label">👥 Invitados</span>
+                  <span class="summary-detail__value" id="sum-invitados">20</span>
+                </div>
+                <div class="summary-detail">
+                  <span class="summary-detail__label">🎂 Edad</span>
+                  <span class="summary-detail__value" id="sum-edad">3–6 años</span>
+                </div>
+                <div class="summary-detail">
+                  <span class="summary-detail__label">📍 Espacio</span>
+                  <span class="summary-detail__value" id="sum-espacio">Exterior</span>
+                </div>
+                <div class="summary-detail" id="sum-fecha-row" style="display:none;">
+                  <span class="summary-detail__label">📅 Fecha</span>
+                  <span class="summary-detail__value" id="sum-fecha">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Juegos seleccionados -->
+            <div class="summary-section">
+              <p class="summary-section__heading">Juegos elegidos</p>
+              <div id="summary-items" role="list">
+                <div class="summary-empty" id="summary-empty">
+                  <span class="summary-empty__icon" aria-hidden="true">🎮</span>
+                  Todavía no elegiste juegos.<br />¡Seleccioná alguno de arriba!
+                </div>
+              </div>
+            </div>
+
+            <!-- Total estimado -->
+            <div class="summary-total">
+              <div class="summary-total__row">
+                <span>Subtotal estimado:</span>
+                <span class="summary-total__price" id="summary-price">$0</span>
+              </div>
+              <p class="summary-total__disclaimer">
+                💡 Precio estimado en pesos. El precio final puede variar según disponibilidad, combo elegido y zona del evento. Consultanos sin compromiso.
+              </p>
+
+              <!-- Barra de completado -->
+              <div class="summary-fill-bar" aria-label="Completado del evento">
+                <div class="summary-fill-bar__track">
+                  <div class="summary-fill-bar__fill" id="summary-fill" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="summary-fill-bar__label" id="summary-fill-label">Agregá juegos para armar tu combo</p>
+              </div>
+            </div>
+
+            <!-- Botón CTA desktop -->
+            <button
+              class="btn btn--primary btn--full"
+              id="btn-submit-desktop"
+              type="button"
+              disabled
+            >
+              Completar reserva 🎈
+            </button>
+
+            <!-- Link alternativo WhatsApp -->
+            <a
+              class="summary-whatsapp"
+              id="summary-whatsapp-link"
+              href="https://wa.me/5491161980246?text=Hola%20Patulandia!%20Quiero%20consultar%20por%20un%20evento"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Escribir directamente por WhatsApp"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+              </svg>
+              O escribinos directamente
+            </a>
+
+            <!-- Reiniciar desde el panel -->
+            <button class="btn-reset-simulator btn-reset-simulator--panel" id="btn-reset-panel" type="button" aria-label="Reiniciar simulador">
+              <span aria-hidden="true">↺</span> Reiniciar
+            </button>
+
+          </div>
+        </aside><!-- /summary-panel -->
+
+      </div><!-- /builder-layout -->
+    </div><!-- /container -->
+  </main>
+
+
+  <!-- ============================================================
+       SECCIÓN: POR QUÉ ARMARLO CON NOSOTROS
+  ============================================================ -->
+  <section class="trust" aria-label="Por qué elegirnos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Sin vueltas</span>
+        <h2 class="section-title">Así de fácil es reservar</h2>
+        <p class="section-subtitle">De acá al WhatsApp, son 2 minutos. Nosotros nos encargamos del resto.</p>
+      </div>
+
+      <div class="trust__grid">
+        <article class="trust-card reveal">
+          <div class="trust-card__icon">🎯</div>
+          <h3 class="trust-card__title">Elegís lo que necesitás</h3>
+          <p class="trust-card__text">Nuestro simulador te ayuda a entender qué juegos son los mejores para tu evento y presupuesto.</p>
+        </article>
+        <article class="trust-card reveal reveal--delay-1">
+          <div class="trust-card__icon">💬</div>
+          <h3 class="trust-card__title">Te contactamos en 1 hora</h3>
+          <p class="trust-card__text">Una vez que nos mandás tu selección, confirmamos disponibilidad y precio final sin demoras.</p>
+        </article>
+        <article class="trust-card reveal reveal--delay-2">
+          <div class="trust-card__icon">🚚</div>
+          <h3 class="trust-card__title">Llegamos y armamos todo</h3>
+          <p class="trust-card__text">Puntualidad garantizada. Montamos y desmontamos los juegos — vos solo disfrutás de la fiesta.</p>
+        </article>
+        <article class="trust-card reveal reveal--delay-3">
+          <div class="trust-card__icon">🔒</div>
+          <h3 class="trust-card__title">Sin compromiso de compra</h3>
+          <p class="trust-card__text">El simulador es gratis. Consultá tranquilo, sin presión ni depósito hasta confirmar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA FINAL
+  ============================================================ -->
+  <section class="cta-final" aria-label="Reservar evento">
+    <div class="container cta-final__inner">
+      <div class="cta-final__content reveal">
+        <span class="cta-final__emoji" aria-hidden="true">🎈</span>
+        <h2 class="cta-final__title">¿Listo para armar algo increíble?</h2>
+        <p class="cta-final__subtitle">
+          Usá el simulador, elegí tus juegos y en segundos te mandamos todo por WhatsApp.
+        </p>
+        <div class="cta-final__actions">
+          <a
+            href="#simulador"
+            class="btn btn--primary btn--large"
+          >
+            Ir al simulador ↑
+          </a>
+          <a
+            href="https://wa.me/5491161980246?text=Hola%20Patulandia!%20Quiero%20consultar%20por%20un%20evento"
+            class="btn btn--whatsapp btn--large"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+            </svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+        <ul class="cta-final__trust" aria-label="Garantías">
+          <li>⚡ Respuesta en menos de 1 hora</li>
+          <li>📍 Merlo · Ituzaingó · Castelar · Padua</li>
+          <li>🔒 Sin compromiso de compra</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER — idéntico al index
+  ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link" aria-label="Patulandia — inicio">
+          <img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">Alquiler de juegos e inflables para eventos infantiles y familiares en zona Oeste.</p>
+      </div>
+
+      <div class="footer__contact">
+        <h3 class="footer__heading">Contacto</h3>
+        <ul class="footer__list">
+          <li>
+            <a href="https://wa.me/5491161980246?text=Hola%20quiero%20consultar%20por%20un%20evento" target="_blank" rel="noopener noreferrer">
+              📱 +54 9 11 6198-0246
+            </a>
+          </li>
+          <li><a href="mailto:patulandia@gmail">✉️ Patulandia@gmail.com</a></li>
+          <li><a href="mapa-sitio.html">🗺️ Mapa del sitio</a></li>
+          <li>📍 Zona Oeste</li>
+        </ul>
+      </div>
+
+      <div class="footer__social">
+        <h3 class="footer__heading">Seguinos</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/patulandia.entretenimientos/" class="social-link" aria-label="Instagram de Patulandia" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/AlquilerdeInflablesPatulandia?locale=es_LA" class="social-link" aria-label="Facebook de Patulandia" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© <span id="currentYear"></span> Patulandia — Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Botón flotante WhatsApp -->
+  <a
+    href="https://wa.me/5491161980246?text=Hola%20Patulandia!%20Quiero%20consultar%20por%20un%20evento"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+    </svg>
+    <span class="whatsapp-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <!-- Scripts — primero el global, luego el específico de esta página -->
+  <script src="./js/index.js"></script>
+  <script src="./js/armar-evento.js"></script>
+</body>
+</html>

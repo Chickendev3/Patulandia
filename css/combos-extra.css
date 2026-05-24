@@ -1,0 +1,795 @@
+/* ============================================================
+   PATULANDIA — ESTILOS ADICIONALES
+   Agregar al FINAL de estilos.css
+   
+   Cubre:
+   A. Dropdown / Submenú desktop (Combos)
+   B. Submenú mobile (dentro del drawer existente)
+   C. Hero de páginas internas
+   D. Layout + Card de combo
+   E. Sección "Qué incluye"
+   F. Sección de specs / detalles
+   G. CTA de combo
+   H. Badge "Combo Promocional"
+   I. Navegación de combos (chips)
+============================================================ */
+
+
+/* ============================================================
+   A. DROPDOWN DESKTOP — hover en "Combos"
+   Se activa solo en ≥ 769px
+============================================================ */
+
+/* El <li> padre necesita position relative */
+.nav__item--dropdown {
+  position: relative;
+}
+
+/* Flecha indicadora junto al texto */
+.nav__link--has-dropdown::after {
+  content: '▾';
+  font-size: 0.7em;
+  margin-left: 4px;
+  display: inline-block;
+  transition: transform var(--t-fast);
+  vertical-align: middle;
+}
+
+.nav__item--dropdown:hover .nav__link--has-dropdown::after {
+  transform: rotate(180deg);
+}
+
+/* Panel flotante */
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 260px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity var(--t-normal),
+    transform var(--t-normal),
+    visibility var(--t-normal);
+  z-index: 999;
+}
+
+/* Triángulo decorativo arriba del dropdown */
+.nav__dropdown::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 7px;
+  background: var(--color-white);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+/* Abrir al hover */
+.nav__item--dropdown:hover .nav__dropdown,
+.nav__item--dropdown:focus-within .nav__dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Separador de categorías */
+.nav__dropdown-group {
+  padding: 0.4rem 0.5rem 0.2rem;
+}
+
+.nav__dropdown-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0 0.5rem;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.nav__dropdown-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0.4rem 0.5rem;
+}
+
+/* Links dentro del dropdown */
+.nav__dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  transition:
+    background var(--t-fast),
+    color var(--t-fast),
+    transform var(--t-fast);
+  white-space: nowrap;
+}
+
+.nav__dropdown-link:hover {
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+  transform: translateX(3px);
+}
+
+.nav__dropdown-link .dd-icon {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nav__dropdown-link .dd-text {
+  flex: 1;
+}
+
+.nav__dropdown-link .dd-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Solo mostrar en desktop */
+@media (max-width: 768px) {
+  .nav__dropdown {
+    display: none !important;
+  }
+}
+
+
+/* ============================================================
+   B. SUBMENÚ MOBILE — dentro del drawer existente
+   Se agrega como sub-lista expandible bajo "Combos"
+============================================================ */
+
+/* Item padre en mobile con flecha */
+.nav-mobile__item--parent {
+  position: relative;
+}
+
+.nav-mobile__link--parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-mobile__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+  font-size: 0.8rem;
+  transition: transform var(--t-normal), background var(--t-fast);
+  flex-shrink: 0;
+}
+
+/*.nav-mobile__item--parent.is-open .nav-mobile__arrow {
+  transform: rotate(180deg);
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Sub-lista en mobile */
+.nav-mobile__submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+}
+
+.nav-mobile__item--parent.is-open .nav-mobile__submenu {
+  max-height: 600px; /* suficiente para todos los items */
+}
+
+.nav-mobile__submenu-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0.6rem 1rem 0.2rem;
+  display: block;
+}
+
+.nav-mobile__submenu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.nav-mobile__submenu-link:hover,
+.nav-mobile__submenu-link:active {
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+}
+
+.nav-mobile__submenu-link .sm-icon { font-size: 1.1rem; width: 22px; text-align: center; }
+
+/* Divisor dentro del submenu */
+.nav-mobile__submenu-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0.3rem 1rem;
+}
+
+
+/* Solo visible en mobile */
+@media (min-width: 769px) {
+  .nav-mobile__arrow { display: none; }
+  .nav-mobile__submenu { display: none; }
+}
+
+
+/* ============================================================
+   C. HERO DE PÁGINAS INTERNAS (combos)
+============================================================ */
+.combo-hero {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-top: var(--header-height);
+}
+
+.combo-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-blue-dark) 0%, #0a2a80 60%, #1a1d2e 100%);
+  z-index: 0;
+}
+
+/* Patrón decorativo de fondo */
+.combo-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255,214,0,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(26,92,255,0.3) 0%, transparent 50%);
+}
+
+.combo-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.combo-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-xl) 0 var(--space-lg);
+  color: var(--color-white);
+}
+
+.combo-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: var(--space-sm);
+}
+
+.combo-hero__breadcrumb a {
+  color: rgba(255,255,255,0.65);
+  transition: color var(--t-fast);
+}
+
+.combo-hero__breadcrumb a:hover { color: var(--color-white); }
+.combo-hero__breadcrumb span { color: rgba(255,255,255,0.4); }
+
+.combo-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-yellow);
+  color: #1a1d2e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.combo-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  color: var(--color-white);
+}
+
+.combo-hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255,255,255,0.8);
+  max-width: 520px;
+  margin-bottom: var(--space-md);
+}
+
+/* Ola decorativa inferior (igual que hero principal) */
+.combo-hero__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  line-height: 0;
+}
+
+.combo-hero__wave svg { width: 100%; height: 50px; }
+
+
+/* ============================================================
+   D. LAYOUT PRINCIPAL DE PÁGINA COMBO
+============================================================ */
+.combo-main {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+
+.combo-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 900px) {
+  .combo-layout {
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+  }
+}
+
+/* Columna izquierda — info principal */
+.combo-info {}
+
+/* Columna derecha — card lateral sticky */
+.combo-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 16px);
+}
+
+
+/* ============================================================
+   E. CARD PRINCIPAL DEL COMBO
+============================================================ */
+.combo-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--t-normal);
+}
+
+.combo-card:hover { box-shadow: var(--shadow-md); }
+
+.combo-card__img-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-blue-light), #e0e8ff);
+}
+
+.combo-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.combo-card:hover .combo-card__img { transform: scale(1.03); }
+
+/* Placeholder cuando no hay imagen */
+.combo-card__img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-blue);
+  opacity: 0.4;
+}
+
+.combo-card__img-placeholder span { font-size: 3rem; }
+.combo-card__img-placeholder p { font-size: 0.8rem; font-weight: 700; }
+
+/* Badge "COMBO PROMOCIONAL" sobre la imagen */
+.combo-promo-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--color-yellow);
+  color: #1a1d2e;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.combo-card__body {
+  padding: var(--space-md) var(--space-lg);
+}
+
+.combo-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.combo-card__desc {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+
+/* ============================================================
+   F. SECCIÓN "QUÉ INCLUYE"
+============================================================ */
+.combo-includes {
+  margin-bottom: var(--space-lg);
+}
+
+.combo-includes__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.combo-includes__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-sm);
+}
+
+.combo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+
+.combo-item:hover {
+  border-color: var(--color-blue);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.combo-item__icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.combo-item__info {}
+.combo-item__name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+.combo-item__detail {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ============================================================
+   G. ESPECIFICACIONES / DETALLES
+============================================================ */
+.combo-specs {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.combo-specs__header {
+  background: var(--color-blue-dark);
+  color: var(--color-white);
+  padding: 0.85rem var(--space-md);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.combo-specs__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.combo-spec {
+  padding: 0.85rem var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.combo-spec:nth-child(even) { border-right: none; }
+.combo-spec:nth-last-child(-n+2) { border-bottom: none; }
+
+.combo-spec__label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.combo-spec__value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+
+/* ============================================================
+   H. BENEFICIOS
+============================================================ */
+.combo-benefits {
+  margin-bottom: var(--space-lg);
+}
+
+.combo-benefits__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.combo-benefits__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.combo-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.combo-benefit::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--color-green);
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+
+/* ============================================================
+   I. SIDEBAR / CARD LATERAL DE ACCIÓN
+============================================================ */
+.combo-action-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.combo-action-card__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue);
+  background: var(--color-blue-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.combo-action-card__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.combo-action-card__sub {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.combo-action-card__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-sm) 0;
+}
+
+.combo-action-card__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.combo-perk {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.combo-perk strong { color: var(--color-text); }
+
+.combo-action-card__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Zona de info adicional debajo de la acción */
+.combo-trust {
+  background: var(--color-blue-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--color-blue);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   J. NAVEGACIÓN ENTRE COMBOS (chips de navegación)
+============================================================ */
+.combo-nav {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-lg);
+}
+
+.combo-nav__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.combo-nav__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.combo-nav__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+  transition:
+    background var(--t-fast),
+    border-color var(--t-fast),
+    color var(--t-fast),
+    transform var(--t-fast);
+}
+
+.combo-nav__chip:hover {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.combo-nav__chip--active {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+  color: var(--color-white);
+  cursor: default;
+}
+
+.combo-nav__chip--active:hover {
+  transform: none;
+}
+
+
+/* ============================================================
+   K. RESPONSIVE — ajustes para páginas de combo
+============================================================ */
+@media (max-width: 600px) {
+  .combo-hero { min-height: 300px; }
+  .combo-hero__title { font-size: 1.8rem; }
+  
+  .combo-specs__grid { grid-template-columns: 1fr; }
+  .combo-spec { border-right: none; }
+  .combo-spec:last-child { border-bottom: none; }
+
+  .combo-includes__list { grid-template-columns: 1fr 1fr; }
+
+  .combo-card__body { padding: var(--space-md); }
+}
+
+@media (max-width: 380px) {
+  .combo-includes__list { grid-template-columns: 1fr; }
+}

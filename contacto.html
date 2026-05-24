@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contactá a Patulandia y pedí tu presupuesto para inflables, juegos y combos para eventos. Te respondemos en menos de 1 hora." />
+  <title>Contacto — Patulandia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+
+  <!-- CSS compartido del sitio -->
+  <link rel="stylesheet" href="./css/estilos.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — igual que index.html
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo" aria-label="Patulandia — volver al inicio">
+        <img
+          src="./img/LogoPatulandia_PNG.png"
+          alt="Patulandia"
+          class="logo__img"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Inicio</a></li>
+          <li><a class="nav__link" href="armar-evento.html">Armar mi evento</a></li>
+          <li class="nav__item--dropdown">
+            <a class="nav__link nav__link--has-dropdown" href="#" aria-haspopup="true">Combos</a>
+          <div class="nav__dropdown" role="menu">
+            <div class="nav__dropdown-group">
+            <span class="nav__dropdown-label">🎈 Combos Inflables</span>
+            <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2</span></a>
+            <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
+            <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
+            <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
+        </div>
+        <div class="nav__dropdown-divider"></div>
+        <div class="nav__dropdown-group">
+          <span class="nav__dropdown-label">✨ Combos Especiales</span>
+          <a class="nav__dropdown-link" href="combo-kids.html" role="menuitem"><span class="dd-icon">🧸</span><span class="dd-text">Combo Kids</span><span class="dd-badge">Popular</span></a>
+          <a class="nav__dropdown-link" href="combo-jovenes.html" role="menuitem"><span class="dd-icon">🕹️</span><span class="dd-text">Combo Jóvenes</span></a>
+          <a class="nav__dropdown-link" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
+          <a class="nav__dropdown-link" href="combo-adultos.html" role="menuitem"><span class="dd-icon">🎱</span><span class="dd-text">Combo Adultos</span></a>
+        </div>
+      </div>
+    </li>
+    <li><a class="nav__link" href="galeria.html">Galería</a></li>
+    <li><a class="nav__link nav__link--active-page" href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navMobile"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV MOBILE — fuera del header -->
+  <div class="nav-mobile-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <nav class="nav-mobile" id="navMobile" aria-hidden="true" aria-label="Menú mobile">
+    <div class="nav-mobile__top">
+      <a href="index.html"><img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="nav-mobile__logo" /></a>
+      <button class="nav-mobile__close" id="navClose" aria-label="Cerrar menú" type="button">✕</button>
+    </div>
+    <ul class="nav-mobile__list">
+      <li><a class="nav-mobile__link" href="index.html">Inicio</a></li>
+      <li><a class="nav-mobile__link" href="armar-evento.html">Armar mi evento</a></li>
+      
+      <li class="nav-mobile__item--parent">
+        <a class="nav-mobile__link nav-mobile__link--parent" href="#" aria-expanded="false">
+          Combos <span class="nav-mobile__arrow" aria-hidden="true">▾</span>
+        </a>
+        <div class="nav-mobile__submenu" aria-hidden="true">
+          <span class="nav-mobile__submenu-label">🎈 Inflables</span>
+          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2</a>
+          <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3</a>
+          <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4</a>
+          <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4</a>
+          <div class="nav-mobile__submenu-divider"></div>
+          <span class="nav-mobile__submenu-label">✨ Especiales</span>
+          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids</a>
+          <a class="nav-mobile__submenu-link" href="combo-jovenes.html"><span class="sm-icon">🕹️</span> Combo Jóvenes</a>
+          <a class="nav-mobile__submenu-link" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
+          <a class="nav-mobile__submenu-link" href="combo-adultos.html"><span class="sm-icon">🎱</span> Combo Adultos</a>
+        </div>
+      </li>
+      <li><a class="nav-mobile__link" href="galeria.html">Galería</a></li>
+      <li><a class="nav-mobile__link nav-mobile__link--active" href="contacto.html">Contacto</a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       HERO DE CONTACTO (contact-hero")
+  ============================================================ -->
+  <section class="contact-hero " id="inicio" aria-label="Contacto">
+
+    <div class="hero__balloons" aria-hidden="true">
+      <div class="balloon balloon--red"></div>
+      <div class="balloon balloon--yellow"></div>
+      <div class="balloon balloon--green"></div>
+      <div class="balloon balloon--blue"></div>
+      <div class="balloon balloon--red b2"></div>
+      <div class="balloon balloon--yellow b3"></div>
+    </div>
+
+    <div class="container contact-hero__content reveal">
+      <span class="hero__badge">🎉 Te respondemos en menos de 1 hora</span>
+
+      <h1 class="contact-hero__title">
+        Hablemos de<br />
+        <em>tu evento</em>
+      </h1>
+
+      <p class="contact-hero__subtitle">
+        Estamos para ayudarte a crear un día inolvidable
+      </p>
+
+      <a href="#formulario" class="btn btn--primary btn--large">
+        Pedir presupuesto ahora 🎈
+      </a>
+    </div>
+
+    <!-- Ola decorativa igual al hero principal -->
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOQUE PRINCIPAL: Formulario + Información
+  ============================================================ -->
+  <section class="contact-main" id="formulario" aria-label="Formulario de contacto">
+    <div class="container">
+      <div class="contact-main__inner">
+
+        <!-- ── COLUMNA IZQUIERDA: Formulario ── -->
+        <div class="contact-form-col">
+          <div class="contact-form-card">
+
+            <div class="form-card__header">
+              <span class="section-label">📋 Formulario de consulta</span>
+              <h2 class="form-card__title">Contanos sobre tu evento</h2>
+              <p class="form-card__subtitle">Completá el formulario y te armamos un presupuesto personalizado</p>
+            </div>
+
+            <!-- FORMULARIO -->
+            <form
+              class="contact-form"
+              id="contactForm"
+              novalidate
+              aria-label="Formulario de consulta"
+            >
+
+              <!-- Nombre + Teléfono -->
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="nombre">
+                    👤 Nombre <span class="form__required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form__input"
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    autocomplete="given-name"
+                    required
+                    aria-describedby="nombreError"
+                  />
+                  <span class="form__error" id="nombreError" role="alert"></span>
+                </div>
+
+                <div class="form__group">
+                  <label class="form__label" for="telefono">
+                    📱 Teléfono <span class="form__required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form__input"
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Ej: 11 5555-5555"
+                    autocomplete="tel"
+                    required
+                    aria-describedby="telefonoError"
+                  />
+                  <span class="form__error" id="telefonoError" role="alert"></span>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form__group">
+                <label class="form__label" for="email">
+                  ✉️ Email <span class="form__required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  autocomplete="email"
+                  required
+                  aria-describedby="emailError"
+                />
+                <span class="form__error" id="emailError" role="alert"></span>
+              </div>
+
+              <!-- Tipo de evento + Cantidad de invitados -->
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="tipoEvento">
+                    🎪 Tipo de evento <span class="form__required" aria-hidden="true">*</span>
+                  </label>
+                  <select
+                    class="form__input form__select"
+                    id="tipoEvento"
+                    name="tipoEvento"
+                    required
+                    aria-describedby="tipoEventoError"
+                  >
+                    <option value="">Seleccioná una opción</option>
+                    <option value="cumpleanos">🎂 Cumpleaños</option>
+                    <option value="escolar">🏫 Evento escolar</option>
+                    <option value="familiar">👨‍👩‍👧 Reunión familiar</option>
+                    <option value="corporativo">🏢 Evento corporativo</option>
+                    <option value="otro">🎉 Otro</option>
+                  </select>
+                  <span class="form__error" id="tipoEventoError" role="alert"></span>
+                </div>
+
+                <div class="form__group">
+                  <label class="form__label" for="invitados">
+                    👥 Cantidad de invitados <span class="form__required" aria-hidden="true">*</span>
+                  </label>
+                  <select
+                    class="form__input form__select"
+                    id="invitados"
+                    name="invitados"
+                    required
+                    aria-describedby="invitadosError"
+                  >
+                    <option value="">¿Cuántos son?</option>
+                    <option value="1-20">Hasta 20</option>
+                    <option value="21-50">21 a 50</option>
+                    <option value="51-100">51 a 100</option>
+                    <option value="100+">Más de 100</option>
+                  </select>
+                  <span class="form__error" id="invitadosError" role="alert"></span>
+                </div>
+              </div>
+
+              <!-- Fecha + Ubicación -->
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="fecha">
+                    📅 Fecha del evento <span class="form__required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form__input"
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                    required
+                    aria-describedby="fechaError"
+                  />
+                  <span class="form__error" id="fechaError" role="alert"></span>
+                </div>
+
+                <div class="form__group">
+                  <label class="form__label" for="ubicacion">
+                    📍 Ubicación / Barrio <span class="form__required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form__input"
+                    type="text"
+                    id="ubicacion"
+                    name="ubicacion"
+                    placeholder="Ej: Castelar, Ramos Mejía..."
+                    required
+                    aria-describedby="ubicacionError"
+                  />
+                  <span class="form__error" id="ubicacionError" role="alert"></span>
+                </div>
+              </div>
+
+              <!-- Servicios (checkboxes) -->
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">
+                  🎮 ¿Qué juegos te interesan?
+                  <span class="form__legend-hint">(Podés elegir varios)</span>
+                </legend>
+                <div class="form__services-grid">
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="inflables" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🏰</span>
+                      <span class="form__service-name">Inflables</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="metegol" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">⚽</span>
+                      <span class="form__service-name">Metegol</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="pool" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🎱</span>
+                      <span class="form__service-name">Pool</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="cama-elastica" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🤸</span>
+                      <span class="form__service-name">Cama elástica</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="tejo" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🎯</span>
+                      <span class="form__service-name">Tejo</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="ping-pong" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🏓</span>
+                      <span class="form__service-name">Ping Pong</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="candy-bar" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🍬</span>
+                      <span class="form__service-name">Candy Bar</span>
+                    </span>
+                  </label>
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="plaza-blanda" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🧸</span>
+                      <span class="form__service-name">Plaza blanda</span>
+                    </span>
+                  </label>
+
+                  <label class="form__service-item">
+                    <input type="checkbox" name="servicios" value="living" class="form__checkbox" />
+                    <span class="form__service-card">
+                      <span class="form__service-icon" aria-hidden="true">🛋️</span>
+                      <span class="form__service-name">Living</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Mensaje -->
+              <div class="form__group">
+                <label class="form__label" for="mensaje">
+                  📝 Mensaje adicional
+                </label>
+                <textarea
+                  class="form__input form__textarea"
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  placeholder="Contanos más: horario, tipo de espacio, algo especial que necesitás..."
+                  maxlength="600"
+                  aria-describedby="charCount"
+                ></textarea>
+                <span class="form__char-count" id="charCount" aria-live="polite">0 / 600</span>
+              </div>
+
+              <!-- Aceptación -->
+              <div class="form__group form__group--check">
+                <label class="form__check-label">
+                  <input
+                    class="form__check-input"
+                    type="checkbox"
+                    id="acepta"
+                    name="acepta"
+                    required
+                    aria-describedby="aceptaError"
+                  />
+                  <span class="form__check-text">
+                    Acepto que Patulandia me contacte para responder mi consulta.
+                  </span>
+                </label>
+                <span class="form__error" id="aceptaError" role="alert"></span>
+              </div>
+
+              <!-- Submit -->
+              <div class="form__submit-area">
+                <button class="btn btn--primary btn--large btn--full" type="submit" id="submitBtn">
+                  Enviar consulta 🎈
+                </button>
+                <p class="form__note">
+                  ✅ Te respondemos en menos de 1 hora
+                </p>
+              </div>
+
+            </form>
+
+            <!-- Mensaje de éxito (oculto hasta envío) -->
+            <div class="form-success" id="formSuccess" hidden aria-live="polite">
+              <div class="form-success__icon" aria-hidden="true">🎉</div>
+              <h3 class="form-success__title">¡Consulta enviada!</h3>
+              <p class="form-success__text">
+                Gracias <strong id="successName"></strong>, te contactamos en menos de una hora por WhatsApp o email.
+              </p>
+              <a href="index.html" class="btn btn--primary">← Volver al inicio</a>
+            </div>
+
+          </div><!-- /contact-form-card -->
+        </div><!-- /contact-form-col -->
+
+
+        <!-- ── COLUMNA DERECHA: Información + Confianza ── -->
+        <div class="contact-info-col">
+
+          <!-- Zona de cobertura + Horarios -->
+          <div class="info-card">
+            <div class="info-card__header">
+              <span class="info-card__icon" aria-hidden="true">📍</span>
+              <h3 class="info-card__title">Zona y horarios</h3>
+            </div>
+            <div class="info-card__body">
+              <p class="info-card__text">
+                <strong>Zona de cobertura:</strong> Merlo, Ituzaingo, Castelar, Padua
+              </p>
+              <div class="hours-list">
+                <div class="hours-item">
+                  <span class="hours-item__day">Lunes a viernes</span>
+                  <span class="hours-item__time">9:00 – 21:00</span>
+                </div>
+                <div class="hours-item">
+                  <span class="hours-item__day">Sábados</span>
+                  <span class="hours-item__time">9:00 – 18:00</span>
+                </div>
+                <div class="hours-item">
+                  <span class="hours-item__day">Domingos</span>
+                  <span class="hours-item__time">Solo eventos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badges de confianza -->
+          <div class="info-card">
+            <div class="info-card__header">
+              <span class="info-card__icon" aria-hidden="true">⭐</span>
+              <h3 class="info-card__title">¿Por qué elegirnos?</h3>
+            </div>
+            <div class="trust-badges__grid">
+              <div class="trust-badge">
+                <span class="trust-badge__icon" aria-hidden="true">🎉</span>
+                <span class="trust-badge__number">+5000</span>
+                <span class="trust-badge__label">Eventos realizados</span>
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge__icon" aria-hidden="true">😊</span>
+                <span class="trust-badge__number">2000+</span>
+                <span class="trust-badge__label">Familias felices</span>
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge__icon" aria-hidden="true">⚡</span>
+                <span class="trust-badge__number">&lt;1h</span>
+                <span class="trust-badge__label">Tiempo de respuesta</span>
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge__icon" aria-hidden="true">⭐</span>
+                <span class="trust-badge__number">5★</span>
+                <span class="trust-badge__label">Calificación</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ventajas (perks) -->
+          <div class="info-card info-card--highlight">
+            <div class="info-card__header">
+              <span class="info-card__icon" aria-hidden="true">🚚</span>
+              <h3 class="info-card__title">Incluye siempre</h3>
+            </div>
+            <div class="perks-list">
+              <div class="perk">
+                <span class="perk__icon" aria-hidden="true">🚛</span>
+                <div>
+                  <strong>Llevamos e instalamos todo</strong>
+                  <span>Todo llega a tiempo y hora</span>
+                </div>
+              </div>
+              <div class="perk">
+                <span class="perk__icon" aria-hidden="true">🧹</span>
+                <div>
+                  <strong>Retiro al finalizar</strong>
+                  <span>Nos encargamos del desarme</span>
+                </div>
+              </div>
+              <div class="perk">
+                <span class="perk__icon" aria-hidden="true">💬</span>
+                <div>
+                  <strong>Asesoramiento personalizado</strong>
+                  <span>Te ayudamos a armar el combo ideal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini testimonios -->
+          <div class="info-card">
+            <div class="info-card__header">
+              <span class="info-card__icon" aria-hidden="true">💬</span>
+              <h3 class="info-card__title">Lo que dicen las familias</h3>
+            </div>
+            <div class="mini-testimonials">
+              <blockquote class="mini-testimonio">
+                <p>"Llegaron puntual y el castillo inflable fue un éxito total. Los chicos no querían irse del evento."</p>
+                <footer>
+                  <img src="https://i.pravatar.cc/40?img=5" alt="" width="36" height="36" loading="lazy" />
+                  <cite>Marisol F. — Cumpleaños en Castelar</cite>
+                </footer>
+              </blockquote>
+              <blockquote class="mini-testimonio">
+                <p>"Super recomendados. El metegol y la cama elástica fueron el hit del cumple. 100% volvería a contratar."</p>
+                <footer>
+                  <img src="https://i.pravatar.cc/40?img=9" alt="" width="36" height="36" loading="lazy" />
+                  <cite>Gaston V. — Evento familiar</cite>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+
+        </div><!-- /contact-info-col -->
+
+      </div><!-- /contact-main__inner -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FAQ — ¿Tenés dudas?
+  ============================================================ -->
+  <section class="faq-section" id="faq" aria-label="Preguntas frecuentes">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">❓ Preguntas frecuentes</span>
+        <h2 class="section-title">¿Tenés dudas?</h2>
+        <p class="section-subtitle">Las preguntas más comunes que nos hacen antes de reservar</p>
+      </div>
+
+      <div class="faq" role="list">
+
+        <div class="faq__item" role="listitem">
+          <button
+            class="faq__question"
+            aria-expanded="false"
+            aria-controls="faq-1"
+            type="button"
+          >
+            <span>⏰ ¿Con cuánta anticipación tengo que reservar?</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" id="faq-1" role="region">
+            <p>Recomendamos reservar <strong>con al menos 7 a 10 días de anticipación</strong>, especialmente para fines de semana. Los sábados y domingos se agotan rápido, sobre todo en temporada alta. Igual, si tu evento es urgente, ¡consultanos! Hacemos lo posible para ayudarte.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button
+            class="faq__question"
+            aria-expanded="false"
+            aria-controls="faq-2"
+            type="button"
+          >
+            <span>🌧️ ¿Qué pasa si llueve el día del evento?</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" id="faq-2" role="region">
+            <p>Lo evaluamos caso a caso. Si la lluvia es fuerte, <strong>coordinamos juntos la mejor solución</strong>: reprogramar la fecha, reducir el tiempo de alquiler o adaptar los juegos al espacio cubierto disponible. Siempre priorizamos la seguridad de los chicos y la tranquilidad de tu familia.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button
+            class="faq__question"
+            aria-expanded="false"
+            aria-controls="faq-3"
+            type="button"
+          >
+            <span>🔧 ¿El armado y desarme está incluido?</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" id="faq-3" role="region">
+            <p><strong>Sí, siempre.</strong> Llegamos antes del horario del evento para montar todo, y al finalizar retiramos cada juego. Vos solo tenés que disfrutar. No hay costos extras por armado o de retiro dentro de nuestra zona de cobertura.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button
+            class="faq__question"
+            aria-expanded="false"
+            aria-controls="faq-4"
+            type="button"
+          >
+            <span>🕐 ¿Cuánto dura el alquiler?</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" id="faq-4" role="region">
+            <p>El alquiler estándar es <strong>por el día del evento</strong> (entre 4 y 6 horas de uso efectivo). Si necesitás más tiempo, coordinamos según disponibilidad. En el presupuesto te detallamos exactamente los horarios de entrega y retiro.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button
+            class="faq__question"
+            aria-expanded="false"
+            aria-controls="faq-5"
+            type="button"
+          >
+            <span>💰 ¿Cómo se paga? ¿Piden seña?</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__answer" id="faq-5" role="region">
+            <p>Sí, para confirmar la reserva pedimos una <strong>seña del 30%</strong> del presupuesto total. El saldo restante se abona el día del evento. Aceptamos transferencia bancaria, Mercado Pago y efectivo.</p>
+          </div>
+        </div>
+
+      </div><!-- /faq -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA FINAL
+  ============================================================ -->
+  <section class="cta-final" aria-label="Reservar evento">
+    <div class="container cta-final__inner">
+      <div class="cta-final__content reveal">
+        <span class="cta-final__emoji" aria-hidden="true">🎈</span>
+        <h2 class="cta-final__title">No dejes tu evento para último momento</h2>
+        <p class="cta-final__subtitle">
+          Los fines de semana se llenan rápido. Consultanos hoy y asegurá tu fecha sin compromiso.
+        </p>
+        <div class="cta-final__actions">
+          <a
+            href="https://wa.me/5491100000000?text=Hola%20Patulandia!%20Quiero%20consultar%20por%20un%20evento"
+            class="btn btn--whatsapp btn--large"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+            </svg>
+            Reservar ahora
+          </a>
+          <a href="#formulario" class="btn btn--outline-white btn--large">Llenar formulario</a>
+        </div>
+        <ul class="cta-final__trust" aria-label="Garantías">
+          <li>⚡ Respuesta en menos de 1 hora</li>
+          <li>📍 Zona Oeste</li>
+          <li>🔒 Sin compromiso de compra</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link" aria-label="Patulandia — inicio">
+          <img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">Alquiler de juegos e inflables para eventos infantiles y familiares en zona Oeste.</p>
+      </div>
+
+      <div class="footer__contact">
+        <h3 class="footer__heading">Contacto</h3>
+        <ul class="footer__list">  
+        <li>
+          <a href="https://wa.me/5491161980246?text=Hola%20quiero%20consultar%20por%20un%20evento"
+          target="_blank" rel="noopener noreferrer"> 📱 +54 9 11 6198-0246</a>
+        </li>
+
+          <li><a href="mailto:patulandia@gmail">✉️ Patulandia@gmail.com</a></li>
+          <li><a href="mapa-sitio.html">🗺️ Mapa del sitio</a></li>
+          <li>📍 Zona Oeste</li>
+        </ul>
+      </div>
+
+      <div class="footer__social">
+        <h3 class="footer__heading">Seguinos</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/patulandia.entretenimientos/" class="social-link" aria-label="Instagram de Patulandia" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/AlquilerdeInflablesPatulandia?locale=es_LA" class="social-link" aria-label="Facebook de Patulandia" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© <span id="currentYear"></span> Patulandia — Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Botón flotante WhatsApp -->
+  <a
+    href="https://wa.me/5491100000000?text=Hola%20Patulandia!%20Quiero%20consultar%20por%20un%20evento"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+    </svg>
+    <span class="whatsapp-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <script src="./js/contacto.js"></script>
+</body>
+</html>

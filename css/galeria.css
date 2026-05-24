@@ -1,0 +1,531 @@
+/* ============================================================
+   PATULANDIA — GALERÍA
+   ============================================================
+   INSTRUCCIONES:
+   Pegá todo este contenido AL FINAL de tu estilos.css principal.
+   Este archivo NO redefine variables, resets, botones ni navbar.
+   Solo contiene clases nuevas exclusivas de galeria.html.
+
+   Estructura:
+   1.  Hero de la galería
+   2.  Secciones de categoría
+   3.  Grid de tarjetas
+   4.  Tarjeta (gallery-card)
+   5.  Lightbox modal
+   6.  CTA de la galería
+   7.  Media queries
+============================================================ */
+
+
+/* ============================================================
+   1. HERO DE LA GALERÍA
+============================================================ */
+.gallery-hero {
+  position: relative;
+  background: linear-gradient(145deg, #0D3BA8 0%, #1A5CFF 40%, var(--color-blue-mid) 70%, #60A5FA 100%);
+  padding: calc(var(--header-height) + var(--space-xl)) 0 calc(var(--space-xl) + 2rem);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Patrón decorativo de fondo */
+.gallery-hero__bg {
+  position: absolute;
+  inset: 0;
+  
+  pointer-events: none;
+}
+
+.gallery-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Sobreescribir el color del .section-label sobre fondo oscuro */
+.gallery-hero__content .section-label {
+  background: rgba(255,255,255,0.15);
+  color: var(--color-white);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.gallery-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  color: var(--color-white);
+  line-height: 1.15;
+  margin: 0;
+  text-align: start;
+}
+
+.gallery-hero__title em {
+  font-style: normal;
+  color: var(--color-yellow);
+}
+
+.gallery-hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: rgba(255,255,255,0.82);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Ola de transición al fondo de la página */
+.gallery-hero__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+}
+.gallery-hero__wave svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ============================================================
+   2. SECCIONES DE CATEGORÍA
+============================================================ */
+.gallery-section {
+  padding: var(--space-xl) 0;
+}
+
+/* Secciones alternadas con fondo levemente diferente */
+.gallery-section--alt {
+  background: var(--color-white);
+}
+
+.gallery-section__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.gallery-section__emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gallery-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  color: var(--color-text);
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
+}
+
+.gallery-section__desc {
+  color: var(--color-text-muted);
+  font-size: 0.97rem;
+  margin: 0;
+}
+
+
+/* ============================================================
+   3. GRID DE TARJETAS
+   Flexbox para control preciso en todos los breakpoints.
+============================================================ */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+/* Mobile: 2 columnas */
+.gallery-card {
+  flex: 1 1 calc(50% - var(--space-md) / 2);
+  min-width: 140px;
+  max-width: calc(50% - var(--space-md) / 2);
+}
+
+
+/* ============================================================
+   4. TARJETA (gallery-card)
+============================================================ */
+.gallery-card {
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--t-normal),
+    box-shadow var(--t-normal);
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-card:active {
+  transform: translateY(-2px);
+}
+
+/* Contenedor de la imagen con aspect-ratio fijo */
+.gallery-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-blue-light);
+}
+
+/* Placeholder visual cuando no carga la imagen */
+.gallery-card__img-wrap--placeholder::after {
+  content: '🖼️';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: var(--color-blue-light);
+}
+
+.gallery-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-card:hover .gallery-card__img {
+  transform: scale(1.07);
+}
+
+/* Overlay de hover con ícono de zoom */
+.gallery-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,92,255,0.0) 40%,
+    rgba(26,64,204,0.55) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--t-normal);
+}
+
+.gallery-card:hover .gallery-card__overlay {
+  opacity: 1;
+}
+
+.gallery-card__zoom {
+  font-size: 1.8rem;
+  transform: scale(0.7);
+  transition: transform var(--t-normal);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.gallery-card:hover .gallery-card__zoom {
+  transform: scale(1);
+}
+
+/* Caption debajo de la imagen */
+.gallery-card__caption {
+  padding: 0.6rem var(--space-sm) 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+
+/* ============================================================
+   5. LIGHTBOX MODAL
+============================================================ */
+
+/* Contenedor principal — cubre toda la pantalla */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Estado visible */
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Fondo oscuro con blur */
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 30, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+/* Contenedor del contenido (imagen + controles) */
+.lightbox__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+  transform: scale(0.92) translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lightbox.is-open .lightbox__content {
+  transform: scale(1) translateY(0);
+}
+
+/* Botón cerrar — esquina superior derecha */
+.lightbox__close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), transform var(--t-fast);
+  z-index: 2;
+}
+.lightbox__close:hover {
+  background: rgba(255,59,59,0.6);
+  transform: scale(1.1);
+}
+
+/* Flechas de navegación */
+.lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), transform var(--t-fast);
+  z-index: 2;
+}
+.lightbox__arrow:hover {
+  background: rgba(26,92,255,0.7);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox__arrow--prev { left: -56px; }
+.lightbox__arrow--next { right: -56px; }
+
+/* Contenedor de la imagen */
+.lightbox__img-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  min-height: 200px;
+  max-height: calc(90vh - 100px);
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: calc(90vh - 100px);
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox__img.is-loaded {
+  opacity: 1;
+}
+
+/* Spinner de carga */
+.lightbox__spinner {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255,255,255,0.15);
+  border-top-color: var(--color-blue-mid);
+  border-radius: 50%;
+  animation: lightboxSpin 0.7s linear infinite;
+  transition: opacity 0.2s;
+}
+.lightbox__spinner.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes lightboxSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Footer del lightbox: caption + contador */
+.lightbox__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 0.25rem 0;
+  gap: var(--space-sm);
+}
+
+.lightbox__caption {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.lightbox__counter {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   6. CTA AL FINAL DE LA GALERÍA
+============================================================ */
+.gallery-cta {
+  background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-mid) 100%);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decoración de fondo sutil */
+.gallery-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 50%, rgba(255,214,0,0.10) 0%, transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(0,192,96,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.gallery-cta__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.gallery-cta__emoji {
+  font-size: 2.8rem;
+  line-height: 1;
+  display: block;
+}
+
+.gallery-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.gallery-cta__subtitle {
+  color: rgba(255,255,255,0.80);
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0;
+}
+
+.gallery-cta__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+
+/* ============================================================
+   7. MEDIA QUERIES
+   Mobile-first: 2 col → tablet 3 col → desktop 4 col
+============================================================ */
+
+/* ─ Móvil pequeño (< 480px): flechas del lightbox por encima ─ */
+@media (max-width: 479px) {
+  /* Las flechas van dentro del contenido, no en los lados */
+  .lightbox__arrow--prev { left: 0; top: auto; bottom: 56px; transform: none; }
+  .lightbox__arrow--next { right: 0; top: auto; bottom: 56px; transform: none; }
+  .lightbox__arrow:hover { transform: scale(1.08); }
+
+  .gallery-cta__actions { flex-direction: column; align-items: stretch; }
+  .gallery-cta__actions .btn { width: 100%; }
+}
+
+/* ─ Tablet (≥ 600px): 3 columnas ─ */
+@media (min-width: 600px) {
+  .gallery-card {
+    flex: 1 1 calc(33.333% - var(--space-md));
+    max-width: calc(33.333% - var(--space-md));
+  }
+
+  .lightbox__arrow--prev { left: -52px; }
+  .lightbox__arrow--next { right: -52px; }
+}
+
+/* ─ Desktop (≥ 900px): 4 columnas ─ */
+@media (min-width: 900px) {
+  .gallery-card {
+    flex: 1 1 calc(25% - var(--space-md));
+    max-width: calc(25% - var(--space-md));
+  }
+
+  /* Flechas más grandes y separadas en desktop */
+  .lightbox__arrow {
+    width: 50px;
+    height: 50px;
+  }
+  .lightbox__arrow--prev { left: -64px; }
+  .lightbox__arrow--next { right: -64px; }
+
+  /* El nav desktop se activa (ya está en estilos.css, solo recordatorio) */
+}
+
+/* ─ Desktop grande (≥ 1100px) ─ */
+@media (min-width: 1100px) {
+  .gallery-hero__title { font-size: 4rem; }
+}

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Galería de inflables y juegos — Patulandia. Conocé nuestros productos para eventos infantiles y familiares en zona Oeste de GBA." />
+  <title>Galería — Patulandia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./img/favicon.ico">
+  <!-- Estilos principales del sitio -->
+  <link rel="stylesheet" href="./css/estilos.css" />
+
+  <!-- Estilos exclusivos de la galería (pegar al final de estilos.css en producción) -->
+  <link rel="stylesheet" href="./css/galeria.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — idéntico al de index.html
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo" aria-label="Patulandia — volver al inicio">
+        <img
+          src="./img/LogoPatulandia_PNG.png"
+          alt="Patulandia"
+          class="logo__img"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Inicio</a></li>
+          <li><a class="nav__link" href="armar-evento.html">Armar mi evento</a></li>
+          <li class="nav__item--dropdown">
+            <a class="nav__link nav__link--has-dropdown" href="#" aria-haspopup="true">Combos</a>
+          <div class="nav__dropdown" role="menu">
+            <div class="nav__dropdown-group">
+            <span class="nav__dropdown-label">🎈 Combos Inflables</span>
+            <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2</span></a>
+            <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
+            <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
+            <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
+        </div>
+        <div class="nav__dropdown-divider"></div>
+        <div class="nav__dropdown-group">
+          <span class="nav__dropdown-label">✨ Combos Especiales</span>
+          <a class="nav__dropdown-link" href="combo-kids.html" role="menuitem"><span class="dd-icon">🧸</span><span class="dd-text">Combo Kids</span><span class="dd-badge">Popular</span></a>
+          <a class="nav__dropdown-link" href="combo-jovenes.html" role="menuitem"><span class="dd-icon">🕹️</span><span class="dd-text">Combo Jóvenes</span></a>
+          <a class="nav__dropdown-link" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
+          <a class="nav__dropdown-link" href="combo-adultos.html" role="menuitem"><span class="dd-icon">🎱</span><span class="dd-text">Combo Adultos</span></a>
+        </div>
+      </div>
+    </li>
+    <li><a class="nav__link nav__link--active-page" href="galeria.html">Galería</a></li>
+    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navMobile"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV MOBILE — drawer lateral, igual que index.html -->
+  <div class="nav-mobile-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <nav class="nav-mobile" id="navMobile" aria-hidden="true" aria-label="Menú mobile">
+    <div class="nav-mobile__top">
+      <a href="index.html"><img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="nav-mobile__logo" /></a>
+      <button class="nav-mobile__close" id="navClose" aria-label="Cerrar menú" type="button">✕</button>
+    </div>
+    <ul class="nav-mobile__list">
+      <li><a class="nav-mobile__link" href="index.html">Inicio</a></li>
+      <li><a class="nav-mobile__link" href="armar-evento.html">Armar mi evento</a></li>
+      
+      <li class="nav-mobile__item--parent">
+        <a class="nav-mobile__link nav-mobile__link--parent" href="#" aria-expanded="false">
+          Combos <span class="nav-mobile__arrow" aria-hidden="true">▾</span>
+        </a>
+        <div class="nav-mobile__submenu" aria-hidden="true">
+          <span class="nav-mobile__submenu-label">🎈 Inflables</span>
+          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2</a>
+          <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3</a>
+          <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4</a>
+          <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4</a>
+          <div class="nav-mobile__submenu-divider"></div>
+          <span class="nav-mobile__submenu-label">✨ Especiales</span>
+          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids</a>
+          <a class="nav-mobile__submenu-link" href="combo-jovenes.html"><span class="sm-icon">🕹️</span> Combo Jóvenes</a>
+          <a class="nav-mobile__submenu-link" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
+          <a class="nav-mobile__submenu-link" href="combo-adultos.html"><span class="sm-icon">🎱</span> Combo Adultos</a>
+        </div>
+      </li>
+      <li><a class="nav-mobile__link nav-mobile__link--active" href="galeria.html">Galería</a></li>
+      <li><a class="nav-mobile__link" href="contacto.html">Contacto</a></li>
+      
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO DE LA GALERÍA
+  ============================================================ -->
+  <section class="gallery-hero" aria-label="Galería de productos">
+
+    <div class="hero__balloons" aria-hidden="true">
+      <div class="balloon balloon--red"></div>
+      <div class="balloon balloon--yellow"></div>
+      <div class="balloon balloon--green"></div>
+      <div class="balloon balloon--blue"></div>
+      <div class="balloon balloon--red b2"></div>
+      <div class="balloon balloon--yellow b3"></div>
+    </div>
+
+    <div class="gallery-hero__bg" aria-hidden="true"></div>
+    <div class="container gallery-hero__content">
+      <span class="section-label reveal">📸 Nuestros productos</span>
+      <h1 class="gallery-hero__title reveal reveal--delay-1">
+        Viví la diversión<br />de <em>cada evento</em>
+      </h1>
+      <p class="gallery-hero__subtitle reveal reveal--delay-2">
+        Conocé nuestros inflables, juegos y todo lo que tenemos para hacer tu fiesta inolvidable.
+      </p>
+    </div>
+    <div class="gallery-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GALERÍA PRINCIPAL
+  ============================================================ -->
+  <main class="gallery-main" id="galeria">
+
+    <!-- ── CATEGORÍA 1: INFLABLES ── -->
+    <section class="gallery-section" aria-labelledby="cat-inflables">
+      <div class="container">
+        <div class="gallery-section__header reveal">
+          <span class="gallery-section__emoji" aria-hidden="true">🏰</span>
+          <div>
+            <h2 class="gallery-section__title" id="cat-inflables">Inflables</h2>
+            <p class="gallery-section__desc">Castillos, toboganes y combinados para todas las edades.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Reemplazá src="img/galeria/inflable1.jpg" con tu imagen real -->
+          <div class="gallery-card reveal" data-index="0">
+            <div class="gallery-card__img-wrap">
+              <img
+                src="img/galeria/inflable1.jpg"
+                alt="Castillo inflable con tobogán"
+                class="gallery-card__img"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')"
+              />
+              <div class="gallery-card__overlay" aria-hidden="true">
+                <span class="gallery-card__zoom">🔍</span>
+              </div>
+            </div>
+            <p class="gallery-card__caption">Castillo con tobogán</p>
+          </div>
+
+          <!-- Reemplazá src="img/galeria/inflable2.jpg" con tu imagen real -->
+          <div class="gallery-card reveal reveal--delay-1" data-index="1">
+            <div class="gallery-card__img-wrap">
+              <img
+                src="img/galeria/inflable2.jpg"
+                alt="Inflable combinado grande"
+                class="gallery-card__img"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')"
+              />
+              <div class="gallery-card__overlay" aria-hidden="true">
+                <span class="gallery-card__zoom">🔍</span>
+              </div>
+            </div>
+            <p class="gallery-card__caption">Inflable combinado</p>
+          </div>
+
+          <!-- Reemplazá src="img/galeria/inflable3.jpg" con tu imagen real -->
+          <div class="gallery-card reveal reveal--delay-2" data-index="2">
+            <div class="gallery-card__img-wrap">
+              <img
+                src="img/galeria/inflable3.jpg"
+                alt="Tobogán inflable simple"
+                class="gallery-card__img"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')"
+              />
+              <div class="gallery-card__overlay" aria-hidden="true">
+                <span class="gallery-card__zoom">🔍</span>
+              </div>
+            </div>
+            <p class="gallery-card__caption">Tobogán simple</p>
+          </div>
+
+          <!-- Reemplazá src="img/galeria/inflable4.jpg" con tu imagen real -->
+          <div class="gallery-card reveal" data-index="3">
+            <div class="gallery-card__img-wrap">
+              <img
+                src="img/galeria/inflable4.jpg"
+                alt="Inflable temático princesas"
+                class="gallery-card__img"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')"
+              />
+              <div class="gallery-card__overlay" aria-hidden="true">
+                <span class="gallery-card__zoom">🔍</span>
+              </div>
+            </div>
+            <p class="gallery-card__caption">Temático princesas</p>
+          </div>
+
+        </div><!-- /gallery-grid -->
+      </div>
+    </section>
+
+
+    <!-- ── CATEGORÍA 2: METEGOL Y JUEGOS ── -->
+    <section class="gallery-section gallery-section--alt" aria-labelledby="cat-juegos">
+      <div class="container">
+        <div class="gallery-section__header reveal">
+          <span class="gallery-section__emoji" aria-hidden="true">⚽</span>
+          <div>
+            <h2 class="gallery-section__title" id="cat-juegos">Metegol y juegos</h2>
+            <p class="gallery-section__desc">Diversión garantizada para chicos y grandes.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Reemplazá src con tus imágenes reales -->
+          <div class="gallery-card reveal" data-index="4">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/metegol1.jpg" alt="Metegol de madera profesional" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Metegol profesional</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-1" data-index="5">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/tejo1.jpg" alt="Tejo / bochas" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Tejo / bochas</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-2" data-index="6">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/pim1.jpg" alt="Pim pom / ping pong" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Ping pong</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CATEGORÍA 3: CAMAS ELÁSTICAS ── -->
+    <section class="gallery-section" aria-labelledby="cat-camas">
+      <div class="container">
+        <div class="gallery-section__header reveal">
+          <span class="gallery-section__emoji" aria-hidden="true">🤸</span>
+          <div>
+            <h2 class="gallery-section__title" id="cat-camas">Camas elásticas</h2>
+            <p class="gallery-section__desc">Saltos sin parar en distintos tamaños.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-card reveal" data-index="7">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/cama1.jpg" alt="Cama elástica redonda grande" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Cama elástica grande</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-1" data-index="8">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/cama2.jpg" alt="Cama elástica mediana con red" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Cama con red de seguridad</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-2" data-index="9">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/cama3.jpg" alt="Cama elástica pequeña para nenes" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Cama para los más chiquitos</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CATEGORÍA 4: LIVING Y MOBILIARIO ── -->
+    <section class="gallery-section gallery-section--alt" aria-labelledby="cat-living">
+      <div class="container">
+        <div class="gallery-section__header reveal">
+          <span class="gallery-section__emoji" aria-hidden="true">🛋️</span>
+          <div>
+            <h2 class="gallery-section__title" id="cat-living">Living y mobiliario</h2>
+            <p class="gallery-section__desc">Puffs, mesas y sillas para armar el espacio perfecto.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-card reveal" data-index="10">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/living1.jpg" alt="Set de puffs coloridos para eventos" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Set de puffs</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-1" data-index="11">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/living2.jpg" alt="Mesas y sillas infantiles" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Mesas y sillas infantiles</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-2" data-index="12">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/living3.jpg" alt="Sillas altas y mesas para adultos" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Mobiliario para adultos</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CATEGORÍA 5: EVENTOS REALES ── -->
+    <section class="gallery-section" aria-labelledby="cat-eventos">
+      <div class="container">
+        <div class="gallery-section__header reveal">
+          <span class="gallery-section__emoji" aria-hidden="true">🎉</span>
+          <div>
+            <h2 class="gallery-section__title" id="cat-eventos">Eventos reales</h2>
+            <p class="gallery-section__desc">Fotos de cumpleaños y eventos de familias que confiaron en nosotros.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-card reveal" data-index="13">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/evento1.jpg" alt="Cumpleaños infantil con inflables" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Cumpleaños con inflable</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-1" data-index="14">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/evento2.jpg" alt="Evento familiar al aire libre" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Evento familiar al aire libre</p>
+          </div>
+
+          <div class="gallery-card reveal reveal--delay-2" data-index="15">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/evento3.jpg" alt="Combo completo armado en jardín" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Combo completo en jardín</p>
+          </div>
+
+          <div class="gallery-card reveal" data-index="16">
+            <div class="gallery-card__img-wrap">
+              <img src="img/galeria/evento4.jpg" alt="Fiesta temática para nenes" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
+            </div>
+            <p class="gallery-card__caption">Fiesta temática</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CTA AL FINAL DE LA GALERÍA ── -->
+    <section class="gallery-cta reveal" aria-label="Reservar evento">
+      <div class="container gallery-cta__inner">
+        <span class="gallery-cta__emoji" aria-hidden="true">🎈</span>
+        <h2 class="gallery-cta__title">¿Te gustó lo que viste?</h2>
+        <p class="gallery-cta__subtitle">Consultanos por WhatsApp y armamos el combo ideal para tu evento.</p>
+        <div class="gallery-cta__actions">
+          <a
+            href="https://wa.me/5491100000000?text=Hola%20Patulandia!%20Vi%20la%20galería%20y%20quiero%20consultar%20por%20un%20evento"
+            class="btn btn--whatsapp btn--large"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+            </svg>
+            Consultá por WhatsApp
+          </a>
+          <a href="armar-evento.html" class="btn btn--outline btn--large">Armar mi evento</a>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /gallery-main -->
+
+
+  <!-- ============================================================
+       LIGHTBOX MODAL
+  ============================================================ -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Imagen ampliada"
+    aria-hidden="true"
+  >
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+
+    <div class="lightbox__content" id="lightboxContent">
+
+      <!-- Botón cerrar -->
+      <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- Flecha anterior -->
+      <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev" aria-label="Imagen anterior" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- Imagen principal -->
+      <div class="lightbox__img-wrap">
+        <img src="" alt="" class="lightbox__img" id="lightboxImg" />
+        <div class="lightbox__spinner" id="lightboxSpinner" aria-hidden="true"></div>
+      </div>
+
+      <!-- Flecha siguiente -->
+      <button class="lightbox__arrow lightbox__arrow--next" id="lightboxNext" aria-label="Imagen siguiente" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <!-- Pie: caption + contador -->
+      <div class="lightbox__footer">
+        <p class="lightbox__caption" id="lightboxCaption"></p>
+        <span class="lightbox__counter" id="lightboxCounter"></span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link" aria-label="Patulandia — inicio">
+          <img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">Alquiler de juegos e inflables para eventos infantiles y familiares en zona Oeste.</p>
+      </div>
+
+      <div class="footer__contact">
+        <h3 class="footer__heading">Contacto</h3>
+        <ul class="footer__list">  
+        <li>
+          <a href="https://wa.me/5491161980246?text=Hola%20quiero%20consultar%20por%20un%20evento"
+          target="_blank" rel="noopener noreferrer"> 📱 +54 9 11 6198-0246</a>
+        </li>
+
+          <li><a href="mailto:patulandia@gmail">✉️ Patulandia@gmail.com</a></li>
+          <li><a href="mapa-sitio.html">🗺️ Mapa del sitio</a></li>
+          <li>📍 Zona Oeste</li>
+        </ul>
+      </div>
+
+      <div class="footer__social">
+        <h3 class="footer__heading">Seguinos</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/patulandia.entretenimientos/" class="social-link" aria-label="Instagram de Patulandia" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/AlquilerdeInflablesPatulandia?locale=es_LA" class="social-link" aria-label="Facebook de Patulandia" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© <span id="currentYear"></span> Patulandia — Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+
+  <!-- Botón flotante WhatsApp — igual que index.html -->
+  <a
+    href="https://wa.me/5491100000000?text=Hola%20Patulandia!%20Quiero%20consultar%20por%20un%20evento"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.837L.057 23.882a.5.5 0 00.611.611l6.094-1.479A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.032-1.378l-.36-.214-3.73.905.923-3.634-.235-.374A9.869 9.869 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
+    </svg>
+    <span class="whatsapp-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <!-- Scripts del sitio -->
+  <script src="./js/index.js"></script>
+  <!-- Script de la galería -->
+  <script src="./js/galeria.js"></script>
+
+</body>
+</html>

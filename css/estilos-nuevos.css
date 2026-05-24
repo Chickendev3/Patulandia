@@ -1,0 +1,343 @@
+/* ============================================================
+   PATULANDIA — ESTILOS ADICIONALES: ARMAR-EVENTO
+   ================================================
+   Pegar al FINAL de estilos.css.
+
+   Solo clases nuevas o extensiones de las existentes.
+   NO redefine: body, :root, header, footer, .btn, .nav.
+
+   Índice:
+   A. Placeholder visual de cards (reemplaza imágenes)
+   B. Mejoras al game-card para layout móvil más fluido
+   C. Animación de entrada escalonada para cards
+   D. Estado "recomendado" en game-card
+   E. Mejora visual del hero del simulador (confetti decorativo)
+   F. Tooltip de precio en cards activas
+   G. Animación del price counter
+   H. Badge de "en tu zona" en summary
+   I. Responsive extra — simulador en mobile muy pequeño
+============================================================ */
+
+
+/* ============================================================
+   A. PLACEHOLDER VISUAL DE CARDS
+   Muestra el emoji en grande como ilustración de la card
+   hasta que se agreguen imágenes reales.
+============================================================ */
+.game-card__placeholder {
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0 0.25rem;
+  /* Fondo suave que desaparece al seleccionar */
+  background: linear-gradient(135deg, rgba(26,92,255,0.04), rgba(26,92,255,0.08));
+  border-radius: var(--radius-md);
+  margin-bottom: 0.25rem;
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+
+.game-card:hover .game-card__placeholder {
+  background: linear-gradient(135deg, rgba(26,92,255,0.08), rgba(26,92,255,0.14));
+}
+
+.game-card.active .game-card__placeholder {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, rgba(35, 13, 13, 0.12), rgba(26,92,255,0.2));
+}
+
+
+/* ============================================================
+   B. MEJORAS AL GAME-CARD
+   Más espacio inferior para el badge absoluto + sombra activa más expresiva.
+============================================================ */
+.game-card {
+  /* Espacio para el badge de fondo */
+  padding-bottom: calc(var(--space-md) + 1.25rem);
+}
+
+/* Card sin badge — sin padding extra */
+.game-card:not(:has(.game-card__badge)) {
+  padding-bottom: var(--space-md);
+}
+
+/* Ring de selección más visible en modo oscuro / alto contraste */
+@media (prefers-color-scheme: dark) {
+  .game-card.active {
+    box-shadow: 0 0 0 3px rgba(26,92,255,0.5), var(--shadow-md);
+  }
+}
+
+
+/* ============================================================
+   C. ANIMACIÓN DE ENTRADA ESCALONADA PARA CARDS
+   Al cargar la página las cards aparecen con un delay incremental.
+============================================================ */
+.game-card {
+  animation: cardReveal 0.4s ease both;
+}
+
+/* Delays para cada card dentro del grid */
+.games-grid .game-card:nth-child(1)  { animation-delay: 0.05s; }
+.games-grid .game-card:nth-child(2)  { animation-delay: 0.10s; }
+.games-grid .game-card:nth-child(3)  { animation-delay: 0.15s; }
+.games-grid .game-card:nth-child(4)  { animation-delay: 0.20s; }
+.games-grid .game-card:nth-child(5)  { animation-delay: 0.25s; }
+.games-grid .game-card:nth-child(6)  { animation-delay: 0.30s; }
+.games-grid .game-card:nth-child(7)  { animation-delay: 0.35s; }
+.games-grid .game-card:nth-child(8)  { animation-delay: 0.40s; }
+.games-grid .game-card:nth-child(9)  { animation-delay: 0.45s; }
+.games-grid .game-card:nth-child(10) { animation-delay: 0.50s; }
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ============================================================
+   D. ESTADO "RECOMENDADO" EN GAME-CARD
+   Clase .recommended que se puede agregar dinámicamente con JS
+   si se quiere resaltar las sugerencias.
+============================================================ */
+.game-card.recommended {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 2px rgba(255,214,0,0.25), var(--shadow-sm);
+}
+
+.game-card.recommended::after {
+  content: '💡 Sugerido';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18rem;
+  background: var(--color-yellow);
+  color: #7A5800;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.game-card.recommended.active {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(26,92,255,0.18), var(--shadow-md);
+}
+
+.game-card.recommended.active::after {
+  background: var(--color-blue);
+  color: var(--color-white);
+  content: '✓ Seleccionado';
+}
+
+
+/* ============================================================
+   E. DETALLE VISUAL EXTRA EN EL HERO DEL SIMULADOR
+   Partículas de confetti decorativas (CSS puro, sin canvas).
+============================================================ */
+.builder-hero {
+  position: relative;
+}
+
+/* Estrellas decorativas adicionales */
+.builder-hero::before {
+  content: '✦  ✦  ✦';
+  position: absolute;
+  bottom: 70px;
+  right: 5%;
+  font-size: 0.65rem;
+  color: rgba(255, 214, 0, 0.4);
+  letter-spacing: 1.2rem;
+  animation: twinkle 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.1); }
+}
+
+
+/* ============================================================
+   F. MICRO-INTERACCIÓN EN EL PRECIO DEL RESUMEN
+   El número "salta" visualmente al actualizarse.
+============================================================ */
+.summary-total__price.updated {
+  animation: pricePop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes pricePop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.15); color: var(--color-green); }
+  100% { transform: scale(1); }
+}
+
+
+/* ============================================================
+   G. BADGE "EN TU ZONA" EN EL PANEL DE RESUMEN
+   Pequeño indicador de zona de cobertura.
+============================================================ */
+.summary-zone-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-green);
+  background: rgba(0, 192, 96, 0.1);
+  border: 1px solid rgba(0, 192, 96, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.75rem;
+  margin-top: 0.25rem;
+}
+
+
+/* ============================================================
+   H. MEJORA DE ACCESIBILIDAD — focus visible en game cards
+============================================================ */
+.game-card:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+  border-color: var(--color-blue);
+}
+
+
+/* ============================================================
+   I. RESPONSIVE EXTRA — mobile muy pequeño (< 380px)
+   En pantallas muy angostas, las cards van en columna única.
+============================================================ */
+@media (max-width: 380px) {
+  .game-card {
+    width: 100%;
+  }
+
+  .games-grid {
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+  }
+
+  .builder-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .progress-bar__label {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   J. RESUMEN — animación de entrada de items
+   Cada item entra con una micro-animación al ser agregado.
+============================================================ */
+.summary-item {
+  animation: summaryItemIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes summaryItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+
+/* ============================================================
+   K. CHIP DE RECOMENDACIÓN — hover interactivo
+============================================================ */
+.recommendation-chip {
+  cursor: default;
+}
+
+.recommendation-chip:hover {
+  border-color: rgba(255, 214, 0, 0.8);
+  box-shadow: 0 2px 12px rgba(255, 214, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   L. ESTADO VACÍO DEL RESUMEN — icono animado
+============================================================ */
+.summary-empty__icon {
+  display: block;
+  margin: 0 auto 0.5rem;
+  animation: floatIcon 2.5s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+
+/* ============================================================
+   M. BOTÓN REINICIAR SIMULADOR
+   Visible y accesible, con micro-animación de confirmación.
+============================================================ */
+.simulator-reset-wrap {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-xs) 0 var(--space-sm);
+}
+
+.btn-reset-simulator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    border-color var(--t-fast),
+    color var(--t-fast),
+    background var(--t-fast),
+    transform var(--t-fast);
+}
+
+.btn-reset-simulator:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+  background: #fff5f5;
+  transform: translateY(-1px);
+}
+
+.btn-reset-simulator:active {
+  transform: scale(0.97);
+}
+
+/* Estado de confirmación "¡Listo!" */
+.btn-reset-simulator--done {
+  border-color: var(--color-green) !important;
+  color: var(--color-green) !important;
+  background: rgba(0,192,96,0.08) !important;
+}
+
+/* Versión compacta dentro del panel de resumen */
+.btn-reset-simulator--panel {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.82rem;
+  padding: 0.5rem 1rem;
+  border-style: dashed;
+}
