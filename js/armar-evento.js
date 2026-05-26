@@ -201,20 +201,20 @@ function updateSelectionCounter() {
 
 const RECOMMENDATIONS = {
   '3-6':    {
-    exterior: '🏰 Inflable Chico o Tobogán Acuático — perfectos para los más pequeños al aire libre.',
+    exterior: '🏰 Inflable Chico o 🧸 Plaza Blanda — perfectos para los más pequeños al aire libre.',
     interior: '🏰 Inflable Chico — cabe en espacios cubiertos y es ideal para esta edad.',
   },
   '7-10':   {
-    exterior: '🏯 Inflable Grande + 🤸 Cama Elástica — combo ideal para chicos activos.',
-    interior: '⚽ Metegol + 🎱 Pool Inflable — diversión garantizada para esta edad.',
+    exterior: '🏯 Inflable Grande o 🤸 Cama Elástica — combo ideal para chicos activos.',
+    interior: '⚽ Metegol + 🎱 Pool — diversión garantizada para esta edad.',
   },
   '11-15':  {
-    exterior: '🎱 Pool Inflable + ⚽ Metegol — perfectos para adolescentes. Competitivo y divertido.',
-    interior: '⚽ Metegol + 🛋️ Living Inflable — ideal para festejar en salones o patios cerrados.',
+    exterior: '🎱 Pool + ⚽ Metegol — perfectos para adolescentes. Competitivo y divertido.',
+    interior: '⚽ Metegol + 🎯Tejo — ideal para festejar en salones o patios cerrados.',
   },
   'adultos': {
-    exterior: '🎯 Tejo + 🛋️ Living Inflable — clásicos para adultos. Ambiente relajado y festivo.',
-    interior: '⚽ Metegol + 🛋️ Living Inflable — combo premium para eventos de adultos.',
+    exterior: '🎯 Tejo + 🎱 Pool — clásicos para adultos. Ambiente relajado y festivo.',
+    interior: '⚽ Metegol + 🎱 Pool + 🎯 Tejo  — combo premium para eventos de adultos.',
   },
 };
 
