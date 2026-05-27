@@ -109,8 +109,9 @@
   /* Layout */
   --max-width:     1200px;
   --header-height: 68px;
+  
 }
-
+.text-yellow { color: var(--color-yellow); }
 
 /* ============================================================
    2. RESET & BASE
@@ -214,7 +215,11 @@ ul  { list-style: none; }
   color: var(--color-blue);
   border-color: var(--color-blue);
 }
-.btn--outline:hover { background: var(--color-blue-light); }
+.btn--outline:hover {
+  background: var(--color-blue); 
+  color: var(--color-white);
+  border-color: var(--color-blue-dark);
+  }
 
 /* Outline blanco (para CTA final sobre fondo oscuro) */
 .btn--outline-white {
@@ -3157,6 +3162,39 @@ ul  { list-style: none; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+/* Badge base — aplica tanto en desktop como mobile */
+.dd-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: var(--color-blue);     /* ← cambiá por tu variable azul, ej: #178BD4 */
+  color: #fff;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 0.4rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+/* Badge "Más pedido" — fuego naranja */
+.dd-badge--hot {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 0.4rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.4;
+  background: #FF6B2B;   /* naranja fuego */
+  color: #fff;
+}
+
 
 /* En mobile el dropdown flotante NO se usa — se oculta */
 @media (max-width: 768px) {
