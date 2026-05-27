@@ -272,7 +272,10 @@ ul  { list-style: none; }
   color: var(--color-white);
   border-color: var(--color-whatsapp);
 }
-.btn--whatsapp:hover { background: var(--color-success); }
+.btn--whatsapp:hover { 
+  background: var(--color-success); 
+  border-color: var(--color-white);
+}
 
 /* Card (para combos) */
 .btn--card {
