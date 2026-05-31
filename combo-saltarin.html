@@ -9,36 +9,38 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/estilos.css" />
-  <link rel="stylesheet" href="./css/combos-extra.css" />
+  <link rel="stylesheet" href="./css/combos-extra.css"/>
+  <link rel="icon" type="image/png" href="./img/favicon.ico">
 </head>
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="Patulandia — volver al inicio">
         <img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="logo__img" />
       </a>
+
       <nav class="nav" aria-label="Menú principal">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html">Inicio</a></li>
           <li><a class="nav__link" href="armar-evento.html">Armar mi evento</a></li>
-          
           <li class="nav__item--dropdown">
-            <a class="nav__link nav__link--has-dropdown nav__link--active" href="combos.html" aria-haspopup="true">Combos</a>
+            <a class="nav__link nav__link--active" href="#" aria-haspopup="true">Combos</a>
             <div class="nav__dropdown" role="menu">
               <div class="nav__dropdown-group">
                 <span class="nav__dropdown-label">🎈 Combos Inflables</span>
-                <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2 + Metegol</span></a>
-                <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3 + Metegol</span></a>
-                <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4 + Metegol</span></a>
-                <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4 + Metegol</span></a>
+                <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2<span class="dd-badge--hot">🔥 Más pedido</span></span></a>
+                <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
+                <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
+                <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
               </div>
               <div class="nav__dropdown-divider"></div>
               <div class="nav__dropdown-group">
                 <span class="nav__dropdown-label">✨ Combos Especiales</span>
                 <a class="nav__dropdown-link" href="combo-kids.html" role="menuitem"><span class="dd-icon">🧸</span><span class="dd-text">Combo Kids</span><span class="dd-badge">Popular</span></a>
                 <a class="nav__dropdown-link" href="combo-jovenes.html" role="menuitem"><span class="dd-icon">🕹️</span><span class="dd-text">Combo Jóvenes</span></a>
-                <a class="nav__dropdown-link" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
+                <a class="nav__dropdown-link nav__link--active" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
                 <a class="nav__dropdown-link" href="combo-adultos.html" role="menuitem"><span class="dd-icon">🎱</span><span class="dd-text">Combo Adultos</span></a>
               </div>
             </div>
@@ -47,12 +49,14 @@
           <li><a class="nav__link" href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
+
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
+  <!-- ===== NAV MOBILE ===== -->
   <div class="nav-mobile-overlay" id="navOverlay" aria-hidden="true"></div>
   <nav class="nav-mobile" id="navMobile" aria-hidden="true" aria-label="Menú mobile">
     <div class="nav-mobile__top">
@@ -62,44 +66,43 @@
     <ul class="nav-mobile__list">
       <li><a class="nav-mobile__link" href="index.html">Inicio</a></li>
       <li><a class="nav-mobile__link" href="armar-evento.html">Armar mi evento</a></li>
-      
       <li class="nav-mobile__item--parent">
         <a class="nav-mobile__link nav-mobile__link--parent" href="#" aria-expanded="false">
           Combos <span class="nav-mobile__arrow" aria-hidden="true">▾</span>
         </a>
         <div class="nav-mobile__submenu" aria-hidden="true">
           <span class="nav-mobile__submenu-label">🎈 Inflables</span>
-          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2 + Metegol</a>
-          <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3 + Metegol</a>
-          <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4 + Metegol</a>
-          <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4 + Metegol</a>
+          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2<span class="dd-badge dd-badge--hot">🔥 Más pedido</span></a>
+          <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3</a>
+          <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4</a>
+          <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4</a>
           <div class="nav-mobile__submenu-divider"></div>
           <span class="nav-mobile__submenu-label">✨ Especiales</span>
-          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids</a>
+          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids<span class="dd-badge">Popular</span></a>
           <a class="nav-mobile__submenu-link" href="combo-jovenes.html"><span class="sm-icon">🕹️</span> Combo Jóvenes</a>
-          <a class="nav-mobile__submenu-link" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
+          <a class="nav-mobile__submenu-link nav__link--active-page" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
           <a class="nav-mobile__submenu-link" href="combo-adultos.html"><span class="sm-icon">🎱</span> Combo Adultos</a>
         </div>
       </li>
       <li><a class="nav-mobile__link" href="galeria.html">Galería</a></li>
       <li><a class="nav-mobile__link" href="contacto.html">Contacto</a></li>
-      <li><a class="nav-mobile__link nav-mobile__link--cta" href="https://wa.me/5491161980246?text=Hola%20Patulandia!%20Quiero%20consultar" target="_blank" rel="noopener noreferrer">Reservar ahora 🎈</a></li>
     </ul>
   </nav>
-
 
   <!-- ===== HERO ===== -->
   <section class="combo-hero" aria-label="Combo Saltarín">
     <div class="combo-hero__bg"></div>
-    <img src="./img/combos/combo-saltarin.jpg" alt="" class="combo-hero__img" aria-hidden="true" />
+    
+    <div class="hero__balloons" aria-hidden="true">
+      <div class="balloon balloon--red"></div>
+      <div class="balloon balloon--yellow"></div>
+      <div class="balloon balloon--green"></div>
+      <div class="balloon balloon--blue"></div>
+      <div class="balloon balloon--red b2"></div>
+      <div class="balloon balloon--yellow b3"></div>
+    </div>
+
     <div class="container combo-hero__content">
-      <nav class="combo-hero__breadcrumb" aria-label="Ruta de navegación">
-        <a href="index.html">Inicio</a>
-        <span aria-hidden="true">›</span>
-        <a href="combos.html">Combos</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Combo Saltarín</span>
-      </nav>
       <span class="combo-hero__badge">🎉 Para los que saltan alto</span>
       <h1 class="combo-hero__title">Combo Saltarín <br></h1>
       <p class="combo-hero__subtitle">Para los que no paran. Energía, altura y diversión en un solo combo.</p>
