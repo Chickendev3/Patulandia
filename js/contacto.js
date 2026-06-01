@@ -39,7 +39,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
 /* ============================================================
    2. MENÚ HAMBURGUESA MOBILE
 ============================================================ */
-(function initHamburger() {
+/*(function initHamburger() {
   const hamburger = $('#hamburger');
   const navMobile = $('#navMobile');
   const navOverlay = $('#navOverlay');
@@ -67,9 +67,10 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
   navClose?.addEventListener('click', closeMenu);
   navOverlay?.addEventListener('click', closeMenu);
 
-  $$('.nav-mobile__link', navMobile).forEach(link =>
-    link.addEventListener('click', closeMenu)
-  );
+  //arreglo de menu
+  $$('.nav-mobile__link:not(.nav-mobile__link--parent)', navMobile).forEach(link =>
+  link.addEventListener('click', closeMenu)
+);
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMobile.classList.contains('is-open')) {
@@ -77,7 +78,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
       hamburger.focus();
     }
   });
-})();
+})();*/
 
 
 /* ============================================================
@@ -385,7 +386,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
 /* ============================================================
    9. SUBMENÚ MOBILE EXPANDIBLE (Combos)
 ============================================================ */
-(function initMobileSubmenu() {
+/*(function initMobileSubmenu() {
   const parentItems = document.querySelectorAll('.nav-mobile__item--parent');
 
   parentItems.forEach(item => {
@@ -416,4 +417,4 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
       submenu.setAttribute('aria-hidden', String(isOpen));
     });
   });
-})();
+})();*/
