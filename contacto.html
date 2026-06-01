@@ -39,7 +39,7 @@
           <div class="nav__dropdown" role="menu">
             <div class="nav__dropdown-group">
             <span class="nav__dropdown-label">🎈 Combos Inflables</span>
-            <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2</span></a>
+            <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2<span class="dd-badge--hot">🔥 Más pedido</span></span></a>
             <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
             <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
             <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
@@ -74,39 +74,38 @@
     </div>
   </header>
 
-  <!-- NAV MOBILE — fuera del header -->
+  <!--
+    NAV MOBILE
+  -->
   <div class="nav-mobile-overlay" id="navOverlay" aria-hidden="true"></div>
-
   <nav class="nav-mobile" id="navMobile" aria-hidden="true" aria-label="Menú mobile">
     <div class="nav-mobile__top">
       <a href="index.html"><img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="nav-mobile__logo" /></a>
       <button class="nav-mobile__close" id="navClose" aria-label="Cerrar menú" type="button">✕</button>
     </div>
     <ul class="nav-mobile__list">
-      <li><a class="nav-mobile__link" href="index.html">Inicio</a></li>
+      <li><a class="nav-mobile__link nav__link--active-page" href="index.html">Inicio</a></li>
       <li><a class="nav-mobile__link" href="armar-evento.html">Armar mi evento</a></li>
-      
       <li class="nav-mobile__item--parent">
         <a class="nav-mobile__link nav-mobile__link--parent" href="#" aria-expanded="false">
           Combos <span class="nav-mobile__arrow" aria-hidden="true">▾</span>
         </a>
         <div class="nav-mobile__submenu" aria-hidden="true">
           <span class="nav-mobile__submenu-label">🎈 Inflables</span>
-          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2</a>
+          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2<span class="dd-badge dd-badge--hot">🔥 Más pedido</span></a>
           <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3</a>
           <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4</a>
           <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4</a>
           <div class="nav-mobile__submenu-divider"></div>
           <span class="nav-mobile__submenu-label">✨ Especiales</span>
-          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids</a>
+          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids<span class="dd-badge">Popular</span></a>
           <a class="nav-mobile__submenu-link" href="combo-jovenes.html"><span class="sm-icon">🕹️</span> Combo Jóvenes</a>
           <a class="nav-mobile__submenu-link" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
           <a class="nav-mobile__submenu-link" href="combo-adultos.html"><span class="sm-icon">🎱</span> Combo Adultos</a>
         </div>
       </li>
       <li><a class="nav-mobile__link" href="galeria.html">Galería</a></li>
-      <li><a class="nav-mobile__link nav-mobile__link--active" href="contacto.html">Contacto</a></li>
-      
+      <li><a class="nav-mobile__link" href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
 
@@ -764,5 +763,6 @@
   </a>
 
   <script src="./js/contacto.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

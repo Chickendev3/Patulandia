@@ -381,3 +381,39 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
   const yearEl = $('#currentYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
+
+/* ============================================================
+   9. SUBMENÚ MOBILE EXPANDIBLE (Combos)
+============================================================ */
+(function initMobileSubmenu() {
+  const parentItems = document.querySelectorAll('.nav-mobile__item--parent');
+
+  parentItems.forEach(item => {
+    const trigger = item.querySelector('.nav-mobile__link--parent');
+    const submenu = item.querySelector('.nav-mobile__submenu');
+    const arrow   = item.querySelector('.nav-mobile__arrow');
+    if (!trigger || !submenu) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const isOpen = item.classList.contains('is-open');
+
+      // Cerrar todos los demás
+      parentItems.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('is-open');
+          const oa = other.querySelector('.nav-mobile__arrow');
+          const os = other.querySelector('.nav-mobile__submenu');
+          if (oa) oa.setAttribute('aria-expanded', 'false');
+          if (os) os.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      // Toggle el actual
+      item.classList.toggle('is-open', !isOpen);
+      if (arrow) arrow.setAttribute('aria-expanded', String(!isOpen));
+      submenu.setAttribute('aria-hidden', String(isOpen));
+    });
+  });
+})();
