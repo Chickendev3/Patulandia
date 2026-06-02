@@ -3839,6 +3839,11 @@ ul  { list-style: none; }
   .combo-includes__list { grid-template-columns: 1fr; }
 }
 
-
+/* Botones del hero centrados en mobile */
+@media (max-width: 768px) {
+  .hero__actions {
+    justify-content: center;
+  }
+}
 
 
