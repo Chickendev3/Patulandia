@@ -11,7 +11,7 @@ Patulandia es una página web desarrollada con tecnologías web básicas, enfoca
 
 El proyecto incluye diferentes secciones conectadas mediante un sistema de navegación intuitivo, permitiendo recorrer el contenido de manera sencilla y agradable.
 
-##🛠️ Tecnologías utilizadas
+🛠️ Tecnologías utilizadas
 
 * HTML5
 * CSS3
@@ -20,7 +20,7 @@ El proyecto incluye diferentes secciones conectadas mediante un sistema de naveg
 * GitHub
 * GitHub Pages
 
-## 🎯 Consignas cumplidas
+🎯 Consignas cumplidas
 
 ✔️ Sitio web de baja complejidad
 ✔️ Home + páginas de navegación
@@ -30,6 +30,6 @@ El proyecto incluye diferentes secciones conectadas mediante un sistema de naveg
 ✔️ Repositorio en GitHub
 ✔️ Publicación mediante GitHub Pages
 
-## 📁 Repositorio
+📁 Repositorio
 
 El código fuente completo del proyecto se encuentra disponible en este repositorio de GitHub.
