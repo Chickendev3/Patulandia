@@ -397,7 +397,7 @@
 
 .combo-card__img-wrap {
   position: relative;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/3;
   overflow: hidden;
   background: linear-gradient(135deg, var(--color-blue-light), #e0e8ff);
 }
@@ -406,6 +406,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.5s ease;
 }
 

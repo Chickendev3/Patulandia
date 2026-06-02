@@ -19,11 +19,14 @@
 <body>
 
   <!-- ============================================================
-       HEADER — idéntico al de index.html
+       HEADER
+       CORRECCIÓN: el nav-mobile va FUERA del header
+       para no romper su layout interno con flex
   ============================================================ -->
   <header class="header" id="header">
     <div class="container header__inner">
 
+      <!-- Logo: tamaño controlado, sin margin que rompa el header -->
       <a href="index.html" class="logo" aria-label="Patulandia — volver al inicio">
         <img
           src="./img/LogoPatulandia_PNG.png"
@@ -32,6 +35,7 @@
         />
       </a>
 
+      <!-- Navegación desktop (oculta en mobile) -->
       <nav class="nav" aria-label="Menú principal">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html">Inicio</a></li>
@@ -40,27 +44,28 @@
             <a class="nav__link nav__link--has-dropdown" href="#" aria-haspopup="true">Combos</a>
           <div class="nav__dropdown" role="menu">
             <div class="nav__dropdown-group">
-            <span class="nav__dropdown-label">🎈 Combos Inflables</span>
-            <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2</span></a>
-            <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
-            <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
-            <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
-        </div>
-        <div class="nav__dropdown-divider"></div>
-        <div class="nav__dropdown-group">
-          <span class="nav__dropdown-label">✨ Combos Especiales</span>
-          <a class="nav__dropdown-link" href="combo-kids.html" role="menuitem"><span class="dd-icon">🧸</span><span class="dd-text">Combo Kids</span><span class="dd-badge">Popular</span></a>
-          <a class="nav__dropdown-link" href="combo-jovenes.html" role="menuitem"><span class="dd-icon">🕹️</span><span class="dd-text">Combo Jóvenes</span></a>
-          <a class="nav__dropdown-link" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
-          <a class="nav__dropdown-link" href="combo-adultos.html" role="menuitem"><span class="dd-icon">🎱</span><span class="dd-text">Combo Adultos</span></a>
-        </div>
-      </div>
-    </li>
-    <li><a class="nav__link nav__link--active-page" href="galeria.html">Galería</a></li>
-    <li><a class="nav__link" href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
+              <span class="nav__dropdown-label">🎈 Combos Inflables</span>
+              <a class="nav__dropdown-link" href="inflable-2x2.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 2x2<span class="dd-badge--hot">🔥 Más pedido</span></span></a>
+              <a class="nav__dropdown-link" href="inflable-3x3.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 3x3</span></a>
+              <a class="nav__dropdown-link" href="inflable-4x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 4x4</span></a>
+              <a class="nav__dropdown-link" href="inflable-6x4.html" role="menuitem"><span class="dd-icon">🏠</span><span class="dd-text">Inflable 6x4</span></a>
+            </div>
+            <div class="nav__dropdown-divider"></div>
+            <div class="nav__dropdown-group">
+              <span class="nav__dropdown-label">✨ Combos Especiales</span>
+                <a class="nav__dropdown-link" href="combo-kids.html" role="menuitem"><span class="dd-icon">🧸</span><span class="dd-text">Combo Kids</span><span class="dd-badge">Popular</span></a>
+                <a class="nav__dropdown-link" href="combo-jovenes.html" role="menuitem"><span class="dd-icon">🕹️</span><span class="dd-text">Combo Jóvenes</span></a>
+                <a class="nav__dropdown-link" href="combo-saltarin.html" role="menuitem"><span class="dd-icon">🎉</span><span class="dd-text">Combo Saltarín</span></a>
+                <a class="nav__dropdown-link" href="combo-adultos.html" role="menuitem"><span class="dd-icon">🎱</span><span class="dd-text">Combo Adultos</span></a>
+            </div>
+          </div>
+          </li>
+          <li><a class="nav__link nav__link--active-page" href="galeria.html">Galería</a></li>
+          <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
 
+      <!-- Botón hamburguesa -->
       <button
         class="hamburger"
         id="hamburger"
@@ -75,10 +80,11 @@
       </button>
     </div>
   </header>
-
-  <!-- NAV MOBILE — drawer lateral, igual que index.html -->
+  
+  <!--
+    NAV MOBILE
+  -->
   <div class="nav-mobile-overlay" id="navOverlay" aria-hidden="true"></div>
-
   <nav class="nav-mobile" id="navMobile" aria-hidden="true" aria-label="Menú mobile">
     <div class="nav-mobile__top">
       <a href="index.html"><img src="./img/LogoPatulandia_PNG.png" alt="Patulandia" class="nav-mobile__logo" /></a>
@@ -87,30 +93,29 @@
     <ul class="nav-mobile__list">
       <li><a class="nav-mobile__link" href="index.html">Inicio</a></li>
       <li><a class="nav-mobile__link" href="armar-evento.html">Armar mi evento</a></li>
-      
       <li class="nav-mobile__item--parent">
         <a class="nav-mobile__link nav-mobile__link--parent" href="#" aria-expanded="false">
           Combos <span class="nav-mobile__arrow" aria-hidden="true">▾</span>
         </a>
         <div class="nav-mobile__submenu" aria-hidden="true">
           <span class="nav-mobile__submenu-label">🎈 Inflables</span>
-          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2</a>
+          <a class="nav-mobile__submenu-link" href="inflable-2x2.html"><span class="sm-icon">🏠</span> Inflable 2x2<span class="dd-badge dd-badge--hot">🔥 Más pedido</span></a>
           <a class="nav-mobile__submenu-link" href="inflable-3x3.html"><span class="sm-icon">🏠</span> Inflable 3x3</a>
           <a class="nav-mobile__submenu-link" href="inflable-4x4.html"><span class="sm-icon">🏠</span> Inflable 4x4</a>
           <a class="nav-mobile__submenu-link" href="inflable-6x4.html"><span class="sm-icon">🏠</span> Inflable 6x4</a>
           <div class="nav-mobile__submenu-divider"></div>
           <span class="nav-mobile__submenu-label">✨ Especiales</span>
-          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids</a>
+          <a class="nav-mobile__submenu-link" href="combo-kids.html"><span class="sm-icon">🧸</span> Combo Kids<span class="dd-badge">Popular</span></a>
           <a class="nav-mobile__submenu-link" href="combo-jovenes.html"><span class="sm-icon">🕹️</span> Combo Jóvenes</a>
           <a class="nav-mobile__submenu-link" href="combo-saltarin.html"><span class="sm-icon">🎉</span> Combo Saltarín</a>
           <a class="nav-mobile__submenu-link" href="combo-adultos.html"><span class="sm-icon">🎱</span> Combo Adultos</a>
         </div>
       </li>
-      <li><a class="nav-mobile__link nav-mobile__link--active" href="galeria.html">Galería</a></li>
+      <li><a class="nav-mobile__link nav__link--active-page" href="galeria.html">Galería</a></li>
       <li><a class="nav-mobile__link" href="contacto.html">Contacto</a></li>
-      
     </ul>
   </nav>
+
 
 
   <!-- ============================================================
@@ -260,7 +265,7 @@
 
           <div class="gallery-card reveal reveal--delay-1" data-index="5">
             <div class="gallery-card__img-wrap">
-              <img src="img/galeria/tejo1.jpg" alt="Tejo / bochas" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <img src="img/tejo.webp" alt="Tejo" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
               <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
             </div>
             <p class="gallery-card__caption">Tejo</p>
@@ -402,10 +407,10 @@
 
           <div class="gallery-card reveal" data-index="16">
             <div class="gallery-card__img-wrap">
-              <img src="img/galeria/evento4.jpg" alt="Fiesta temática para nenes" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
+              <img src="img/plaza_blanda_1.webp" alt="Fiesta temática para nenes" class="gallery-card__img" loading="lazy" onerror="this.parentElement.classList.add('gallery-card__img-wrap--placeholder')" />
               <div class="gallery-card__overlay" aria-hidden="true"><span class="gallery-card__zoom">🔍</span></div>
             </div>
-            <p class="gallery-card__caption">Fiesta temática</p>
+            <p class="gallery-card__caption">Plaza blanda</p>
           </div>
 
         </div>
